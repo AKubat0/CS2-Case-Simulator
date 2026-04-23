@@ -4,13 +4,16 @@ import java.awt.*;
 public class Main{
 
     Swing.Utilities.invokeLater(() -> {
-        JFrame frame = new JFrame("My Application");
+        JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 300);
-        frame.setLocationRelativeTo(null); // Center the frame on the screen
+        frame.setLocationRelativeTo(null);
+        frame.setTitle("CS2 Case Simulator");
+        
+        
         frame.setVisible(true);
 
-        
+
     });
 
 

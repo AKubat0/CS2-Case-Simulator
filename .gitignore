@@ -1,1 +1,6 @@
-/Main.class
+.idea/
+*.iml
+.project
+.settings/
+bin/
+out/

@@ -7,14 +7,12 @@ public class CaseItem {
     private ItemRarity rarity;
     private float wear;
     private Image icon;
-    private String pattern;
 
     public CaseItem(String name, ItemRarity rarity, float wear, Image icon) {
         this.name = name;
         this.rarity = rarity;
         this.wear = wear;
         this.icon = icon;
-        this.pattern = pattern;
     }
     
 }

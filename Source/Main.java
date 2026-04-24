@@ -1,7 +1,5 @@
+package Source;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Main{
 
@@ -11,7 +9,9 @@ public class Main{
             JFrame frame = new JFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setSize(400, 300);
-            frame.setLocationRelativeTo(null); // Center the frame on the screen
+            frame.setLocationRelativeTo(null);
+            frame.setTitle("CS2 Case Simulator");
+
             frame.setVisible(true);
         });
 

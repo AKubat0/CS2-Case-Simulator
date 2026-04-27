@@ -77,36 +77,73 @@ public class CaseOpenManager{
         testCase.addItem(new CaseItem("MP7 | Abyssal Apparition", ItemRarity.CLASSIFIED, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
         testCase.addItem(new CaseItem("MP9 | Starlight Protector", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
         testCase.addItem(new CaseItem("AK-47 | Nightwish", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Shadow Daggers | Bright Water", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Shadow Daggers | Freehand", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Shadow Daggers | Autotronic", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Shadow Daggers | Black Laminate", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Shadow Daggers | Lore", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Shadow Daggers | Gamma Doppler", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Huntsman Knife | Bright Water", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Huntsman Knife | Black Laminate", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Huntsman Knife | Freehand", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Huntsman Knife | Lore", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Huntsman Knife | Autotronic", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Huntsman Knife | Gamma Doppler", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Falchion Knife | Bright Water", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Falchion Knife | Black Laminate", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Falchion Knife | Freehand", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Falchion Knife | Lore", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Falchion Knife | Autotronic", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Falchion Knife | Gamma Doppler", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Butterfly Knife | Gamma Doppler", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Butterfly Knife | Autotronic", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Butterfly Knife | Bright Water", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Butterfly Knife | Freehand", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Butterfly Knife | Lore", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Butterfly Knife | Black Laminate", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Bowie Knife | Black Laminate", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Bowie Knife | Bright Water", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Bowie Knife | Freehand", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Bowie Knife | Autotronic", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Bowie Knife | Lore", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-        testCase.addItem(new CaseItem("Bowie Knife | Gamma Doppler", ItemRarity.COVERT, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Shadow Daggers | Bright Water", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Shadow Daggers | Freehand", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Shadow Daggers | Autotronic", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Shadow Daggers | Black Laminate", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Shadow Daggers | Lore", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Shadow Daggers | Gamma Doppler", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Huntsman Knife | Bright Water", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Huntsman Knife | Black Laminate", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Huntsman Knife | Freehand", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Huntsman Knife | Lore", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Huntsman Knife | Autotronic", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Huntsman Knife | Gamma Doppler", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Falchion Knife | Bright Water", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Falchion Knife | Black Laminate", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Falchion Knife | Freehand", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Falchion Knife | Lore", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Falchion Knife | Autotronic", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Falchion Knife | Gamma Doppler", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Butterfly Knife | Gamma Doppler", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Butterfly Knife | Autotronic", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Butterfly Knife | Bright Water", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Butterfly Knife | Freehand", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Butterfly Knife | Lore", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Butterfly Knife | Black Laminate", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Bowie Knife | Black Laminate", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Bowie Knife | Bright Water", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Bowie Knife | Freehand", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Bowie Knife | Autotronic", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Bowie Knife | Lore", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+        testCase.addItem(new CaseItem("Bowie Knife | Gamma Doppler", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+
+        /*
+        CaseItem openedItem;
+        int counter = 0;
+        while (true){
+            openedItem = manager.openCase(testCase);
+            counter++;
+            if (openedItem.getRarity() == ItemRarity.RARE_SPECIAL_ITEM){
+                System.out.println("You opened: " + openedItem.getName() + " | Rarity: " + openedItem.getRarity() + " | Wear: " + openedItem.getWear() + " | Pattern Index: " + openedItem.getPatternIndex() + " | StatTrak: " + openedItem.isStatTrak());
+                System.out.println("It took you " + counter + " cases to get a rare special item.");
+                break;
+            }
+        }
+        */
+
+        int milSpecCount = 0;
+        int restrictedCount = 0;
+        int classifiedCount = 0;
+        int covertCount = 0;
+        int rareSpecialItemCount = 0;
+
+        for (int i = 0; i < 1000000; i++){
+            CaseItem openedItem = manager.openCase(testCase);
+            switch (openedItem.getRarity()) {
+                case MIL_SPEC -> milSpecCount++;
+                case RESTRICTED -> restrictedCount++;
+                case CLASSIFIED -> classifiedCount++;
+                case COVERT -> covertCount++;
+                case RARE_SPECIAL_ITEM -> rareSpecialItemCount++;
+            }
+        }
+        System.out.println("After opening 100000 cases:");
+        System.out.println("Mil-Spec: " + milSpecCount);
+        System.out.println("Restricted: " + restrictedCount);
+        System.out.println("Classified: " + classifiedCount);
+        System.out.println("Covert: " + covertCount);
+        System.out.println("Rare Special Item: " + rareSpecialItemCount);
 
 }
     

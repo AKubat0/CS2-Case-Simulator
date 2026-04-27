@@ -60,7 +60,6 @@ public class CaseOpenManager{
     public static void main(String[] args) {
         CaseOpenManager manager = new CaseOpenManager();
         Case testCase = new Case("Dreams And Nightmares", "path/to/case/icon.png");
-        testCase.addItem(new CaseItem("AK-47 | Redline", ItemRarity.MIL_SPEC, "path/to/ak47_redline/icon.png"));
         
     }
     

@@ -121,14 +121,15 @@ public class CaseOpenManager{
             }
         }
         */
-
+        /* 
         int milSpecCount = 0;
         int restrictedCount = 0;
         int classifiedCount = 0;
         int covertCount = 0;
         int rareSpecialItemCount = 0;
+        int statTrakCount = 0;
 
-        for (int i = 0; i < 1000000; i++){
+        for (int i = 0; i < 1000; i++){
             CaseItem openedItem = manager.openCase(testCase);
             switch (openedItem.getRarity()) {
                 case MIL_SPEC -> milSpecCount++;
@@ -137,16 +138,22 @@ public class CaseOpenManager{
                 case COVERT -> covertCount++;
                 case RARE_SPECIAL_ITEM -> rareSpecialItemCount++;
             }
+            if (openedItem.isStatTrak()) {
+                statTrakCount++;
+            }
         }
-        System.out.println("After opening 100000 cases:");
+
+        System.out.println("After opening 1000 cases:");
         System.out.println("Mil-Spec: " + milSpecCount);
         System.out.println("Restricted: " + restrictedCount);
         System.out.println("Classified: " + classifiedCount);
         System.out.println("Covert: " + covertCount);
         System.out.println("Rare Special Item: " + rareSpecialItemCount);
+        System.out.println("StatTrak: " + statTrakCount);
+        */
 
-}
-    
+        CaseItem openedItem = manager.openCase(testCase);
+        System.out.println("You opened: " + openedItem.getName() + " | Rarity: " + openedItem.getRarity() + " | Wear: " + openedItem.getWear() + " | Pattern Index: " + openedItem.getPatternIndex() + " | StatTrak: " + openedItem.isStatTrak());
 
-
+    }
 }

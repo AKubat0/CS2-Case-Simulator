@@ -23,6 +23,7 @@ public class Main{
             System.err.println("Icon image not found at: " + iconURL);
         }
 
+
         frame.setVisible(true);
     }
 

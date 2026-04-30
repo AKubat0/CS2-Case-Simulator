@@ -1,9 +1,16 @@
 package src;
 import java.awt.*;
 import java.net.URL;
+import java.util.ArrayList;
 import javax.swing.*;
 
 public class Main{
+    private ArrayList<Case> allCases = new ArrayList();
+    Case dreamsAndNightmares;
+    Case glove;
+    Case kilowatt;
+    Case operationBreakout;
+    Case weaponCase1;
 
     public Main(){
         JFrame frame = new JFrame();
@@ -23,17 +30,16 @@ public class Main{
             System.err.println("Icon image not found at: " + iconURL);
         }
 
-        JPanel openCasePanel = new JPanel(new BorderLayout());
-        JPanel centeringWrapper = new JPanel(new GridBagLayout());
-        centeringWrapper.setBackground(new Color(10, 9, 13));
-        JPanel caseCardHolder = new JPanel();
-        caseCardHolder.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
-        caseCardHolder.setBackground(new Color(10, 9, 13));
-        centeringWrapper.add(caseCardHolder);
-        openCasePanel.add(centeringWrapper, BorderLayout.CENTER);
+        initData();
 
+        OpenCasePanel openCasePanel = new OpenCasePanel(allCases);
+        frame.add(openCasePanel);
 
-        Case dreamsAndNightmares = new Case("Dreams And Nightmares", Main.class.getResource("/SourceImages/Cases/DreamsAndNightmares/DreamsAndNightmaresCase.png"));
+        frame.setVisible(true);
+    }
+
+    private void initData(){
+        dreamsAndNightmares = new Case("Dreams And Nightmares", Main.class.getResource("/SourceImages/Cases/DreamsAndNightmares/DreamsAndNightmaresCase.png"));
         dreamsAndNightmares.addItem(new CaseItem("SCAR-20 | Poultrygeist", ItemRarity.MIL_SPEC, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
         dreamsAndNightmares.addItem(new CaseItem("MAG-7 | Foresight", ItemRarity.MIL_SPEC, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
         dreamsAndNightmares.addItem(new CaseItem("Sawed-Off | Spirit Board", ItemRarity.MIL_SPEC, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
@@ -81,17 +87,7 @@ public class Main{
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Autotronic", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Lore", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Gamma Doppler", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
-
-        CaseCard dreamsAndNightmaresCard = new CaseCard(dreamsAndNightmares, e -> {
-        });
-        caseCardHolder.add(dreamsAndNightmaresCard);
-
-        
-
-        frame.add(openCasePanel);
-
-
-        frame.setVisible(true);
+        allCases.add(dreamsAndNightmares);
     }
 
     public static void main(String[] args) {

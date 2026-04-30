@@ -8,7 +8,7 @@ public class Case {
     private ImageIcon caseIcon;
     private ArrayList<CaseItem> items;
     
-    public Case(String caseName, String caseIconPath) {
+    public Case(String caseName, java.net.URL caseIconPath) {
         this.caseName = caseName;
         this.caseIcon = new ImageIcon(caseIconPath);
         this.items = new ArrayList<>();

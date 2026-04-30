@@ -11,16 +11,22 @@ public class CaseItem {
     private boolean isStatTrak;
     
 
-
-    //TO DO: Change iconPath to URL and load image in constructor
     public CaseItem(String name, ItemRarity rarity, String iconPath) {
-        this.name = name;
-        this.rarity = rarity;
-        this.icon = new ImageIcon(iconPath);
-        if (this.icon == null || this.icon.getImage() == null) {
-            System.err.println("Failed to load icon for item: " + name + " from path: " + iconPath);
+    this.name = name;
+    this.rarity = rarity;
+
+    java.net.URL imgURL = getClass().getResource(iconPath);
+
+    if (imgURL != null) {
+        this.icon = new ImageIcon(imgURL);
+        if (this.icon.getImageLoadStatus() != java.awt.MediaTracker.COMPLETE) {
+            System.err.println("[ERROR] Corrupted image file: " + name + " @ " + iconPath);
         }
+    } 
+    else {
+        System.err.println("[MISSING] Resource not found for: " + name + " @ " + iconPath);
     }
+}
     
     public String getName() {
         return name;

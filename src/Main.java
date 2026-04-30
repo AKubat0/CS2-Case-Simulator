@@ -10,7 +10,7 @@ public class Main{
     Case glove;
     Case kilowatt;
     Case operationBreakout;
-    Case weaponCase1;
+    Case recoil;
 
     public Main(){
         JFrame frame = new JFrame();
@@ -87,7 +87,26 @@ public class Main{
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Autotronic", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Lore", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Gamma Doppler", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
+
+        glove = new Case("Glove", Main.class.getResource("/SourceImages/Cases/Glove/Glock18,Ironwork.png"));
+
+
+
+        kilowatt = new Case("Kilowatt", Main.class.getResource("/SourceImages/Cases/Kilowatt/KilowattCase.png"));
+
+
+
+        operationBreakout = new Case("Operation Breakout", Main.class.getResource("/SourceImages/Cases/OperationBreakout/BreakoutCase.png"));
+
+        
+
+        recoil = new Case("Recoil", Main.class.getResource("/SourceImages/Cases/RecoilCase/RecoilCase.png"));
+
         allCases.add(dreamsAndNightmares);
+        allCases.add(glove);
+        allCases.add(kilowatt);
+        allCases.add(operationBreakout);
+        allCases.add(recoil);
     }
 
     public static void main(String[] args) {

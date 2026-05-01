@@ -88,7 +88,7 @@ public class Main{
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Lore", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Gamma Doppler", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
 
-        glove = new Case("Glove", Main.class.getResource("/SourceImages/Cases/Glove/Glock18,Ironwork.png"));
+        glove = new Case("Glove", Main.class.getResource("/SourceImages/Cases/Glove/GloveCase1.png"));
 
 
 

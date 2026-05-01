@@ -9,13 +9,22 @@ public class CaseCard extends JPanel {
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBorder(BorderFactory.createEtchedBorder());
-        setBackground(new Color(35, 43, 56));
+        setBackground(new Color(35, 41, 50));
 
         ImageIcon originalIcon = _case.getCaseIcon();
 
         ImageIcon fixedIcon = getScaledIcon(originalIcon, 200, 200);
         
         JLabel imageLabel = new JLabel(fixedIcon);
+
+        Dimension imageSize = new Dimension(250, 250);
+        imageLabel.setPreferredSize(imageSize);
+        imageLabel.setMinimumSize(imageSize);
+        imageLabel.setMaximumSize(imageSize);
+
+        imageLabel.setHorizontalAlignment(JLabel.CENTER);
+        imageLabel.setVerticalAlignment(JLabel.CENTER);
+
         imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JLabel nameLabel = new JLabel(_case.getCaseName());

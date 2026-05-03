@@ -6,14 +6,15 @@ import javax.swing.*;
 
 public class Main{
     private ArrayList<Case> allCases = new ArrayList();
-    Case dreamsAndNightmares;
-    Case glove;
-    Case kilowatt;
-    Case operationBreakout;
-    Case recoil;
+    static Case dreamsAndNightmares;
+    static Case glove;
+    static Case kilowatt;
+    static Case operationBreakout;
+    static Case recoil;
+    static JFrame frame;
 
     public Main(){
-        JFrame frame = new JFrame();
+        frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1920, 1080);
         frame.setResizable(true);
@@ -32,8 +33,13 @@ public class Main{
 
         initData();
 
-        OpenCasePanel openCasePanel = new OpenCasePanel(allCases);
-        frame.add(openCasePanel);
+        //OpenCasePanel openCasePanel = new OpenCasePanel(allCases);
+        //frame.add(openCasePanel);
+        CaseOpenManager caseOpenManager = new CaseOpenManager();
+        CaseItem wonItem = caseOpenManager.openCase(dreamsAndNightmares);
+        CaseResultPanel resultPanel = new CaseResultPanel(wonItem);
+        frame.add(resultPanel);
+
 
         frame.setVisible(true);
     }
@@ -113,6 +119,13 @@ public class Main{
 
         SwingUtilities.invokeLater(() -> {
             Main main = new Main();
+
+            // CaseAnimationPanel animPanel = new CaseAnimationPanel(dreamsAndNightmares);
+            // frame.add(animPanel);
+
+            // Timer startDelay = new Timer(1000, e -> animPanel.startSpin());
+            // startDelay.setRepeats(false);
+            // startDelay.start();
         });
 
 

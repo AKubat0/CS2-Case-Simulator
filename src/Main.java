@@ -174,7 +174,36 @@ public class Main implements Navigator {
 
 
         kilowatt = new Case("Kilowatt", "/SourceImages/Cases/Kilowatt/KilowattCase.png");
-
+        kilowatt.addItem(new CaseItem("Nova | Dark Sigil", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Kilowatt/Nova,DarkSigil.png"));
+        kilowatt.addItem(new CaseItem("Dual Berettas | Hideout", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Kilowatt/DualBerettas,Hideout.png"));
+        kilowatt.addItem(new CaseItem("UMP-45 | Motorized", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Kilowatt/UMP45,Motorized.png"));
+        kilowatt.addItem(new CaseItem("XM1014 | Irezumi", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Kilowatt/XM1014,Irezumi.png"));
+        kilowatt.addItem(new CaseItem("Tec-9 | Slag", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Kilowatt/Tec-9,Slag.png"));
+        kilowatt.addItem(new CaseItem("SSG 08 | Dezastre", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Kilowatt/SSG08,Dezastre.png"));
+        kilowatt.addItem(new CaseItem("MAC-10 | Light Box", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Kilowatt/MAC-10,LightBox.png"));
+        kilowatt.addItem(new CaseItem("Sawed-Off | Analog Input", ItemRarity.RESTRICTED, "/SourceImages/Cases/Kilowatt/Sawed-Off,AnalogInput.png"));
+        kilowatt.addItem(new CaseItem("Glock-18 | Block-18", ItemRarity.RESTRICTED, "/SourceImages/Cases/Kilowatt/Glock-18,Block-18.png"));
+        kilowatt.addItem(new CaseItem("Five-SeveN | Hybrid", ItemRarity.RESTRICTED, "/SourceImages/Cases/Kilowatt/Five-SeveN,Hybrid.png"));
+        kilowatt.addItem(new CaseItem("MP7 | Just Smile", ItemRarity.RESTRICTED, "/SourceImages/Cases/Kilowatt/MP7,JustSmile.png"));
+        kilowatt.addItem(new CaseItem("M4A4 | Etch Lord", ItemRarity.RESTRICTED, "/SourceImages/Cases/Kilowatt/M4A4,EtchLord.png"));
+        kilowatt.addItem(new CaseItem("Zeus x27 | Olympus", ItemRarity.CLASSIFIED, "/SourceImages/Cases/Kilowatt/Zeusx27,Olympus.png"));
+        kilowatt.addItem(new CaseItem("USP-S | Jawbreaker", ItemRarity.CLASSIFIED, "/SourceImages/Cases/Kilowatt/USPS,Jawbreaker.png"));
+        kilowatt.addItem(new CaseItem("M4A1-S | Black Lotus", ItemRarity.CLASSIFIED, "/SourceImages/Cases/Kilowatt/M4A1S,BlackLotus.png"));
+        kilowatt.addItem(new CaseItem("AWP | Chrome Cannon", ItemRarity.COVERT, "/SourceImages/Cases/Kilowatt/AWP,ChromeCannon.png"));
+        kilowatt.addItem(new CaseItem("AK-47 | Inheritance", ItemRarity.COVERT, "/SourceImages/Cases/Kilowatt/AK47,Inheritance.png"));
+        kilowatt.addItem(new CaseItem("Kukri Knife | Forest DDPAT", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Kilowatt/KukriKnife,ForestDDPAT.png"));
+        kilowatt.addItem(new CaseItem("Kukri Knife | Safari Mesh", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Kilowatt/KukriKnife,SafariMesh.png"));
+        kilowatt.addItem(new CaseItem("Kukri Knife | Boreal Forest", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Kilowatt/KukriKnife,BorealForest.png"));
+        kilowatt.addItem(new CaseItem("Kukri Knife | Night Stripe", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Kilowatt/KukriKnife,NightStripe.png"));
+        kilowatt.addItem(new CaseItem("Kukri Knife | Scorched", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Kilowatt/KukriKnife,Scorched.png"));
+        kilowatt.addItem(new CaseItem("Kukri Knife | Urban Masked", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Kilowatt/KukriKnife,UrbanMasked.png"));
+        kilowatt.addItem(new CaseItem("Kukri Knife | Stained", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Kilowatt/KukriKnife,Stained.png"));
+        kilowatt.addItem(new CaseItem("Kukri Knife | Vanilla", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Kilowatt/KukriKnife,Vanilla.png"));
+        kilowatt.addItem(new CaseItem("Kukri Knife | Blue Steel", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Kilowatt/KukriKnife,BlueSteel.png"));
+        kilowatt.addItem(new CaseItem("Kukri Knife | Slaughter", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Kilowatt/KukriKnife,Slaughter.png"));
+        kilowatt.addItem(new CaseItem("Kukri Knife | Case Hardened", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Kilowatt/KukriKnife,CaseHardened.png"));
+        kilowatt.addItem(new CaseItem("Kukri Knife | Fade", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Kilowatt/KukriKnife,Fade.png"));
+        kilowatt.addItem(new CaseItem("Kukri Knife | Crimson Web", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Kilowatt/KukriKnife,CrimsonWeb.png"));
 
 
         operationBreakout = new Case("Operation Breakout", "/SourceImages/Cases/OperationBreakout/BreakoutCase.png");

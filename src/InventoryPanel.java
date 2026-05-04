@@ -66,8 +66,7 @@ public class InventoryPanel extends JPanel {
         JLabel iconLabel = new JLabel();
         if (item.getIcon() != null) {
             Image img = item.getIcon().getImage();
-            double ratio = Math.min(140.0 / img.getWidth(null), 100.0 / img.getHeight(null));
-            Image scaled = img.getScaledInstance((int)(img.getWidth(null)*ratio), (int)(img.getHeight(null)*ratio), Image.SCALE_SMOOTH);
+            Image scaled = ImageUtils.getScaledImage(img, 140, 100, false);
             iconLabel.setIcon(new ImageIcon(scaled));
         }
         iconLabel.setHorizontalAlignment(SwingConstants.CENTER);

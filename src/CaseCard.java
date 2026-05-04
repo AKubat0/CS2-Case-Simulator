@@ -51,18 +51,6 @@ public class CaseCard extends JPanel {
     }
 
     public ImageIcon getScaledIcon(ImageIcon srcIcon, int maxWidth, int maxHeight) {
-    Image srcImg = srcIcon.getImage();
-    int originalWidth = srcImg.getWidth(null);
-    int originalHeight = srcImg.getHeight(null);
-
-    double widthRatio = (double) maxWidth / originalWidth;
-    double heightRatio = (double) maxHeight / originalHeight;
-    double ratio = Math.min(widthRatio, heightRatio);
-
-    int newWidth = (int) (originalWidth * ratio);
-    int newHeight = (int) (originalHeight * ratio);
-
-    Image scaledImg = srcImg.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
-    return new ImageIcon(scaledImg);
+        return ImageUtils.getScaledIcon(srcIcon, maxWidth, maxHeight, false);
     }
 }

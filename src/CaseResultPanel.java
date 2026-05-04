@@ -44,8 +44,7 @@ public class CaseResultPanel extends JPanel {
         ImageIcon icon = wonItem.getIcon();
         if (icon != null) {
             Image img = icon.getImage();
-            // Scale to a larger size for the result screen
-            Image scaledImg = img.getScaledInstance(400, 300, Image.SCALE_SMOOTH);
+            Image scaledImg = ImageUtils.getScaledImage(img, 400, 300, false);
             JLabel iconLabel = new JLabel(new ImageIcon(scaledImg));
             gbc.gridy = 2;
             gbc.insets = new Insets(30, 10, 30, 10);

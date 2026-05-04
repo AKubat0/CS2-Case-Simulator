@@ -207,10 +207,78 @@ public class Main implements Navigator {
 
 
         operationBreakout = new Case("Operation Breakout", "/SourceImages/Cases/OperationBreakout/BreakoutCase.png");
-        
+        operationBreakout.addItem(new CaseItem("Negev | Desert-Strike", ItemRarity.MIL_SPEC, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("UMP-45 | Labyrinth", ItemRarity.MIL_SPEC, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("P2000 | Ivory", ItemRarity.MIL_SPEC, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("MP7 | Urban Hazard", ItemRarity.MIL_SPEC, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("SSG 08 | Abyss", ItemRarity.MIL_SPEC, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("PP-Bizon | Osiris", ItemRarity.RESTRICTED, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Nova | Koi", ItemRarity.RESTRICTED, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("P250 | Supernova", ItemRarity.RESTRICTED, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("CZ75-Auto | Tigris", ItemRarity.RESTRICTED, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Desert Eagle | Conspiracy", ItemRarity.CLASSIFIED, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Glock-18 | Water Elemental", ItemRarity.CLASSIFIED, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Five-SeveN | Fowl Play", ItemRarity.CLASSIFIED, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("M4A1-S | Cyrex", ItemRarity.COVERT, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("P90 | Asiimov", ItemRarity.COVERT, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Butterfly Knife | Fade", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Butterfly Knife | Slaughter", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Butterfly Knife | Safari Mesh", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Butterfly Knife | Forest DDPAT", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Butterfly Knife | Crimson Web", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Butterfly Knife | Urban Masked", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Butterfly Knife | Vanilla", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Butterfly Knife | Boreal Forest", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Butterfly Knife | Scorched", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Butterfly Knife | Case Hardened", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Butterfly Knife | Night", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Butterfly Knife | Stained", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
+        operationBreakout.addItem(new CaseItem("Butterfly Knife | Blue Steel", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/OperationBreakout/Nova,DarkSigil.png"));
 
         
         recoil = new Case("Recoil", "/SourceImages/Cases/RecoilCase/RecoilCase.png");
+        recoil.addItem(new CaseItem("Galil AR | Destroyer", ItemRarity.MIL_SPEC, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("UMP-45 | Roadblock", ItemRarity.MIL_SPEC, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("MAC-10 | Monkeyflage", ItemRarity.MIL_SPEC, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Negev | Drop Me", ItemRarity.MIL_SPEC, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("FAMAS | Meow 36", ItemRarity.MIL_SPEC, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("M4A4 | Poly Mag", ItemRarity.MIL_SPEC, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Glock-18 | Winterized", ItemRarity.MIL_SPEC, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("M249 | Downtown", ItemRarity.RESTRICTED, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("P90 | Vent Rush", ItemRarity.RESTRICTED, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("SG 553 | Dragon Tech", ItemRarity.RESTRICTED, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Dual Berettas | Flora Carnivora", ItemRarity.RESTRICTED, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("R8 Revolver | Crazy 8", ItemRarity.RESTRICTED, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("P250 | Visions", ItemRarity.CLASSIFIED, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Sawed-Off | Kiss♥Love", ItemRarity.CLASSIFIED, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("AK-47 | Ice Coaled", ItemRarity.CLASSIFIED, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("AWP | Chromatic Aberration", ItemRarity.COVERT, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("USP-S | Printstream", ItemRarity.COVERT, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Sport Gloves | Big Game", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Sport Gloves | Scarlet Shamagh", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Sport Gloves | Slingshot", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Sport Gloves | Nocts", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Specialist Gloves | Lt. Commander", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Specialist Gloves | Tiger Strike", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Specialist Gloves | Field Agent", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Specialist Gloves | Marble Fade", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Moto Gloves | 3rd Commando Company", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Moto Gloves | Finish Line", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Moto Gloves | Smoke Out", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Moto Gloves | Blood Pressure", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Hand Wraps | Desert Shamagh", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Hand Wraps | Constrictor", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Hand Wraps | Giraffe", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Hand Wraps | CAUTION", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Driver Gloves | Queen Jaguar", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Driver Gloves | Rezan the Red", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Driver Gloves | Black Tie", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Driver Gloves | Snow Leopard", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Broken Fang Gloves | Needle Point", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Broken Fang Gloves | Unhinged", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Broken Fang Gloves | Yellow-banded", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+        recoil.addItem(new CaseItem("Broken Fang Gloves | Jade", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/RecoilCase/Nova,DarkSigil.png"));
+
 
         allCases.add(dreamsAndNightmares);
         allCases.add(glove);

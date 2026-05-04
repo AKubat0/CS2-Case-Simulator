@@ -128,10 +128,49 @@ public class Main implements Navigator {
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Lore", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/BowieKnife,Lore.png"));
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Gamma Doppler", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/BowieKnife,GammaDoppler.png"));
 
+
         glove = new Case("Glove", "/SourceImages/Cases/Glove/GloveCase1.png");
         glove.addItem(new CaseItem("CZ75-Auto | Polymer", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Glove/Cz75-Auto,Polymer.png"));
         glove.addItem(new CaseItem("MAG-7 | Sonar", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Glove/Mag-7,Sonar.png"));
-        
+        glove.addItem(new CaseItem("MP9 | Sand Scale", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Glove/MP9,SandScale.png"));
+        glove.addItem(new CaseItem("Galil AR | Black Sand", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Glove/GalilAR,BlackSand.png"));
+        glove.addItem(new CaseItem("P2000 | Turf", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Glove/P2000,Turf.png"));
+        glove.addItem(new CaseItem("Glock-18 | Ironwork", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Glove/Glock18,Ironwork.png"));
+        glove.addItem(new CaseItem("MP7 | Cirrus", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Glove/MP7,Cirrus.png"));
+        glove.addItem(new CaseItem("Nova | Gila", ItemRarity.RESTRICTED, "/SourceImages/Cases/Glove/Nova,Gila.png"));
+        glove.addItem(new CaseItem("G3SG1 | Stinger", ItemRarity.RESTRICTED, "/SourceImages/Cases/Glove/G3SG1,Stinger.png"));
+        glove.addItem(new CaseItem("Dual Berettas | Royal Consorts", ItemRarity.RESTRICTED, "/SourceImages/Cases/Glove/DualBerettas,RoyalConsorts.png"));
+        glove.addItem(new CaseItem("USP-S | Cyrex", ItemRarity.RESTRICTED, "/SourceImages/Cases/Glove/USPS,Cyrex.png"));
+        glove.addItem(new CaseItem("M4A1-S | Flashback", ItemRarity.RESTRICTED, "/SourceImages/Cases/Glove/M4A1S,Flashback.png"));
+        glove.addItem(new CaseItem("P90 | Shallow Grave", ItemRarity.CLASSIFIED, "/SourceImages/Cases/Glove/P90,ShallowGrave.png"));
+        glove.addItem(new CaseItem("Sawed-Off | Wasteland Princess", ItemRarity.CLASSIFIED, "/SourceImages/Cases/Glove/Sawed-Off,WastelandPrincess.png"));
+        glove.addItem(new CaseItem("FAMAS | Mecha Industries", ItemRarity.CLASSIFIED, "/SourceImages/Cases/Glove/FAMAS,MechaIndustries.png"));
+        glove.addItem(new CaseItem("SSG 08 | Dragonfire", ItemRarity.COVERT, "/SourceImages/Cases/Glove/SSG08,Dragonfire.png"));
+        glove.addItem(new CaseItem("M4A4 | Buzz Kill", ItemRarity.COVERT, "/SourceImages/Cases/Glove/M4A4,BuzzKill.png"));
+        glove.addItem(new CaseItem("Sport Gloves | Pandora's Box", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SportGloves,PandorasBox.png"));
+        glove.addItem(new CaseItem("Sport Gloves | Hedge Maze", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SportGloves,HedgeMaze.png"));     
+        glove.addItem(new CaseItem("Sport Gloves | Arid", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SportGloves,Arid.png"));
+        glove.addItem(new CaseItem("Sport Gloves | Superconductor", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SportGloves,Superconductor.png"));
+        glove.addItem(new CaseItem("Specialist Gloves | Forest DDPAT", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SpecialistGloves,ForestDDPAT.png"));
+        glove.addItem(new CaseItem("Specialist Gloves | Crimson Kimono", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SpecialistGloves,CrimsonKimono.png"));
+        glove.addItem(new CaseItem("Specialist Gloves | Foundation", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SpecialistGloves,Foundation.png"));
+        glove.addItem(new CaseItem("Specialist Gloves | Emerald Web", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SpecialistGloves,EmeraldWeb.png"));
+        glove.addItem(new CaseItem("Moto Gloves | Eclipse", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/MotoGloves,Eclipse.png"));
+        glove.addItem(new CaseItem("Moto Gloves | Boom!", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/MotoGloves,Boom.png"));
+        glove.addItem(new CaseItem("Moto Gloves | Spearmint", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/MotoGloves,Spearmint.png"));
+        glove.addItem(new CaseItem("Moto Gloves | Cool Mint", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/MotoGloves,CoolMint.png"));
+        glove.addItem(new CaseItem("Hand Wraps | Spruce DDPAT", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/HandWraps,SpruceDDPAT.png"));
+        glove.addItem(new CaseItem("Hand Wraps | Badlands", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/HandWraps,Badlands.png"));
+        glove.addItem(new CaseItem("Hand Wraps | Leather", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/HandWraps,Leather.png"));
+        glove.addItem(new CaseItem("Hand Wraps | Slaughter", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/HandWraps,Slaughter.png"));
+        glove.addItem(new CaseItem("Driver Gloves | Lunar Weave", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/DriverGloves,LunarWave.png"));
+        glove.addItem(new CaseItem("Driver Gloves | Convoy", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/DriverGloves,Convoy.png"));
+        glove.addItem(new CaseItem("Driver Gloves | Diamondback", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/DriverGloves,Diamondback.png"));
+        glove.addItem(new CaseItem("Driver Gloves | Crimson Weave", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/DriverGloves,CrimsonWeave.png"));
+        glove.addItem(new CaseItem("Bloodhound Gloves | Guerrilla", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/BloodhoundGloves,Guerrilla.png"));
+        glove.addItem(new CaseItem("Bloodhound Gloves | Charred", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/BloodhoundGloves,Charred.png"));        
+        glove.addItem(new CaseItem("Bloodhound Gloves | Snakebite", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/BloodhoundGloves,Snakebite.png"));
+        glove.addItem(new CaseItem("Bloodhound Gloves | Bronzed", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/BloodhoundGloves,Bronzed.png"));
 
 
         kilowatt = new Case("Kilowatt", "/SourceImages/Cases/Kilowatt/KilowattCase.png");

@@ -9,7 +9,7 @@ public class CaseCard extends JPanel {
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBorder(BorderFactory.createEtchedBorder());
-        setBackground(new Color(35, 41, 50));
+        setBackground(new Color(20, 23, 27));
 
         ImageIcon originalIcon = _case.getCaseIcon();
 
@@ -33,6 +33,11 @@ public class CaseCard extends JPanel {
         nameLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JButton openButton = new JButton("Open Case");
+        openButton.setFont(new Font("SansSerif", Font.BOLD, 12));
+        openButton.setForeground(Color.WHITE);
+        openButton.setBackground(new Color(45, 45, 50));
+        openButton.setFocusPainted(false);
+        openButton.setBorder(BorderFactory.createEmptyBorder(10, 25, 10, 25));
         openButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         openButton.addActionListener(openAction);
 
@@ -50,12 +55,10 @@ public class CaseCard extends JPanel {
     int originalWidth = srcImg.getWidth(null);
     int originalHeight = srcImg.getHeight(null);
 
-    // Calculate the scale factor
     double widthRatio = (double) maxWidth / originalWidth;
     double heightRatio = (double) maxHeight / originalHeight;
     double ratio = Math.min(widthRatio, heightRatio);
 
-    // New dimensions
     int newWidth = (int) (originalWidth * ratio);
     int newHeight = (int) (originalHeight * ratio);
 

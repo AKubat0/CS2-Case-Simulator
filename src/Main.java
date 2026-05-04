@@ -8,7 +8,7 @@ import javax.swing.*;
 public class Main implements Navigator {
 
     private ArrayList<Case> allCases = new ArrayList<>();
-    private Inventory userInventory = new Inventory(); // Assuming you have an Inventory class
+    private Inventory userInventory = new Inventory();
 
     static Case dreamsAndNightmares;
     static Case glove;
@@ -50,7 +50,6 @@ public class Main implements Navigator {
 
     @Override
     public void showInventory() {
-        // We create a new panel each time to ensure it shows the latest items
         InventoryPanel invPanel = new InventoryPanel(userInventory, this);
         mainContainer.add(invPanel, "INVENTORY");
         cardLayout.show(mainContainer, "INVENTORY");
@@ -63,18 +62,15 @@ public class Main implements Navigator {
 
     @Override
     public void startCaseOpening(Case selectedCase) {
-        // Switch to animation screen
         CaseAnimationPanel animPanel = new CaseAnimationPanel(selectedCase, this);
         mainContainer.add(animPanel, "ANIMATION");
         cardLayout.show(mainContainer, "ANIMATION");
-        
-        // Trigger the spin
+
         animPanel.startSpin();
     }
 
     @Override
     public void showResult(CaseItem wonItem) {
-        // Save item to inventory and show result
         userInventory.addItem(wonItem);
         
         CaseResultPanel resultPanel = new CaseResultPanel(wonItem, this);
@@ -133,7 +129,9 @@ public class Main implements Navigator {
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Gamma Doppler", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/BowieKnife,GammaDoppler.png"));
 
         glove = new Case("Glove", "/SourceImages/Cases/Glove/GloveCase1.png");
-
+        glove.addItem(new CaseItem("CZ75-Auto | Polymer", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Glove/Cz75-Auto,Polymer.png"));
+        glove.addItem(new CaseItem("MAG-7 | Sonar", ItemRarity.MIL_SPEC, "/SourceImages/Cases/Glove/Mag-7,Sonar.png"));
+        
 
 
         kilowatt = new Case("Kilowatt", "/SourceImages/Cases/Kilowatt/KilowattCase.png");

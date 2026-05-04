@@ -62,7 +62,7 @@ public class CaseAnimationPanel extends JPanel {
         currentX += velocity; 
         velocity *= FRICTION;     
 
-        if (velocity < 0.2) { 
+        if (velocity < 1) { 
             velocity = 0;
             animTimer.stop();
             nav.showResult(winningItem);
@@ -115,7 +115,6 @@ public class CaseAnimationPanel extends JPanel {
             }
         }
 
-        // Needle
         g2.setColor(new Color(255, 215, 0)); 
         g2.setStroke(new BasicStroke(3));
         g2.drawLine(centerX, centerY - 30, centerX, centerY + ITEM_HEIGHT + 30);

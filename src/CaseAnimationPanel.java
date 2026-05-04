@@ -44,7 +44,7 @@ public class CaseAnimationPanel extends JPanel {
         this.caseOpenManager = new CaseOpenManager();
         
         setOpaque(true);
-        setBackground(new Color(30, 30, 30)); 
+        setBackground(new Color(10, 9, 13)); 
         this.setPreferredSize(new Dimension(800, 300));
         
         prepareStrip(selectedCase);

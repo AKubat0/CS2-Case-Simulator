@@ -22,9 +22,19 @@ public class CaseResultPanel extends JPanel {
         add(subtitle, gbc);
 
         // 2. Item Name Label (Main Header)
-        JLabel nameLabel = new JLabel(wonItem.getName().toUpperCase(), SwingConstants.CENTER);
+        JLabel nameLabel = new JLabel();
+        nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
         nameLabel.setFont(new Font("SansSerif", Font.BOLD, 32));
-        nameLabel.setForeground(Color.WHITE);
+
+        if (wonItem.isStatTrak()){
+            nameLabel.setText("STAT TRAK™ " + wonItem.getName().toUpperCase());
+            nameLabel.setForeground(new Color(219, 119, 11));
+        }
+        else{
+            nameLabel.setText(wonItem.getName().toUpperCase());
+            nameLabel.setForeground(Color.WHITE);
+        }
+        
         gbc.gridy = 1;
         add(nameLabel, gbc);
 

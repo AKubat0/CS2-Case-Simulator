@@ -35,10 +35,11 @@ public class Main{
 
         //OpenCasePanel openCasePanel = new OpenCasePanel(allCases);
         //frame.add(openCasePanel);
-        CaseOpenManager caseOpenManager = new CaseOpenManager();
-        CaseItem wonItem = caseOpenManager.openCase(dreamsAndNightmares);
-        CaseResultPanel resultPanel = new CaseResultPanel(wonItem);
-        frame.add(resultPanel);
+        // CaseOpenManager caseOpenManager = new CaseOpenManager();
+        // CaseItem wonItem = caseOpenManager.openCase(dreamsAndNightmares);
+        // System.out.println("is it stattrak? " + wonItem.isStatTrak());
+        // CaseResultPanel resultPanel = new CaseResultPanel(wonItem);
+        // frame.add(resultPanel);
 
 
         frame.setVisible(true);
@@ -120,12 +121,12 @@ public class Main{
         SwingUtilities.invokeLater(() -> {
             Main main = new Main();
 
-            // CaseAnimationPanel animPanel = new CaseAnimationPanel(dreamsAndNightmares);
-            // frame.add(animPanel);
+            CaseAnimationPanel animPanel = new CaseAnimationPanel(dreamsAndNightmares);
+            frame.add(animPanel);
 
-            // Timer startDelay = new Timer(1000, e -> animPanel.startSpin());
-            // startDelay.setRepeats(false);
-            // startDelay.start();
+            Timer startDelay = new Timer(1000, e -> animPanel.startSpin());
+            startDelay.setRepeats(false);
+            startDelay.start();
         });
 
 

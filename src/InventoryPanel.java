@@ -4,12 +4,14 @@ import java.awt.*;
 import javax.swing.*;
 
 public class InventoryPanel extends JPanel {
+    private Navigator nav;
     private Inventory inventory;
     private JPanel gridPanel;
     private JButton backButton;
 
-    public InventoryPanel(Inventory inventory) {
+    public InventoryPanel(Inventory inventory, Navigator nav) {
         this.inventory = inventory;
+        this.nav = nav;
         this.setLayout(new BorderLayout());
         this.setBackground(new Color(10, 9, 13));
 
@@ -18,10 +20,10 @@ public class InventoryPanel extends JPanel {
         headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 20));
 
         backButton = createStyledButton("OPEN MORE CASES");
+        backButton.addActionListener(e -> nav.showCaseSelection());
         headerPanel.add(backButton);
         add(headerPanel, BorderLayout.NORTH);
 
-        // Fixed-size Grid logic
         gridPanel = new JPanel(new GridLayout(0, 8, 15, 15));
         gridPanel.setBackground(new Color(10, 9, 13));
 

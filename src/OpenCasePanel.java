@@ -5,9 +5,11 @@ import javax.swing.*;
 
 public class OpenCasePanel extends JPanel {
 
+    private Navigator nav;
     JButton inventoryButton;
 
-    public OpenCasePanel(List<Case> availableCases) {
+    public OpenCasePanel(List<Case> availableCases, Navigator nav) {
+        this.nav = nav;
         setLayout(new BorderLayout());
 
         JPanel headerPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -17,6 +19,7 @@ public class OpenCasePanel extends JPanel {
         inventoryButton = createStyledButton("GO TO INVENTORY");
         headerPanel.add(inventoryButton);
         add(headerPanel, BorderLayout.NORTH);
+        inventoryButton.addActionListener(e -> nav.showInventory());
 
         JPanel centeringWrapper = new JPanel(new GridBagLayout());
         centeringWrapper.setBackground(new Color(10, 9, 13));
@@ -35,7 +38,7 @@ public class OpenCasePanel extends JPanel {
 
     private void handleSelection(Case selectedCase) {
         System.out.println("User chose: " + selectedCase.getCaseName());
-        // Switch to opening animation screen...
+        nav.startCaseOpening(selectedCase);
     }
 
     private JButton createStyledButton(String text) {

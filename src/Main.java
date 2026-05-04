@@ -1,48 +1,85 @@
 package src;
+
 import java.awt.*;
 import java.net.URL;
 import java.util.ArrayList;
 import javax.swing.*;
 
-public class Main{
-    private ArrayList<Case> allCases = new ArrayList();
+public class Main implements Navigator {
+
+    private ArrayList<Case> allCases = new ArrayList<>();
+    private Inventory userInventory = new Inventory(); // Assuming you have an Inventory class
+
     static Case dreamsAndNightmares;
     static Case glove;
     static Case kilowatt;
     static Case operationBreakout;
     static Case recoil;
-    static JFrame frame;
 
-    public Main(){
+    static JFrame frame;
+    private CardLayout cardLayout;
+    private JPanel mainContainer;
+
+    public Main() {
+
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1920, 1080);
-        frame.setResizable(true);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setLocationRelativeTo(null);
         frame.setTitle("CS2 Case Simulator");
-        frame.getContentPane().setBackground(new Color(10, 9, 13));
+
+        cardLayout = new CardLayout();
+        mainContainer = new JPanel(cardLayout);
+        mainContainer.setBackground(new Color(10, 9, 13));
 
         URL iconURL = Main.class.getResource("/SourceImages/main-icon.png");
         if (iconURL != null) {
             ImageIcon icon = new ImageIcon(iconURL);
             frame.setIconImage(icon.getImage());
-        } else {
-            System.err.println("Icon image not found at: " + iconURL);
         }
 
         initData();
 
-        OpenCasePanel openCasePanel = new OpenCasePanel(allCases);
-        frame.add(openCasePanel);
-        // CaseOpenManager caseOpenManager = new CaseOpenManager();
-        // CaseItem wonItem = caseOpenManager.openCase(dreamsAndNightmares);
-        // System.out.println("is it stattrak? " + wonItem.isStatTrak());
-        // CaseResultPanel resultPanel = new CaseResultPanel(wonItem);
-        // frame.add(resultPanel);
+        OpenCasePanel selectionPanel = new OpenCasePanel(allCases, this);
+        mainContainer.add(selectionPanel, "SELECTION");
 
-
+        frame.add(mainContainer);
         frame.setVisible(true);
+    }
+
+    @Override
+    public void showInventory() {
+        // We create a new panel each time to ensure it shows the latest items
+        InventoryPanel invPanel = new InventoryPanel(userInventory, this);
+        mainContainer.add(invPanel, "INVENTORY");
+        cardLayout.show(mainContainer, "INVENTORY");
+    }
+
+    @Override
+    public void showCaseSelection() {
+        cardLayout.show(mainContainer, "SELECTION");
+    }
+
+    @Override
+    public void startCaseOpening(Case selectedCase) {
+        // Switch to animation screen
+        CaseAnimationPanel animPanel = new CaseAnimationPanel(selectedCase, this);
+        mainContainer.add(animPanel, "ANIMATION");
+        cardLayout.show(mainContainer, "ANIMATION");
+        
+        // Trigger the spin
+        animPanel.startSpin();
+    }
+
+    @Override
+    public void showResult(CaseItem wonItem) {
+        // Save item to inventory and show result
+        userInventory.addItem(wonItem);
+        
+        CaseResultPanel resultPanel = new CaseResultPanel(wonItem, this);
+        mainContainer.add(resultPanel, "RESULT");
+        cardLayout.show(mainContainer, "RESULT");
     }
 
     private void initData(){
@@ -95,7 +132,7 @@ public class Main{
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Lore", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/BowieKnife,Lore.png"));
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Gamma Doppler", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/BowieKnife,GammaDoppler.png"));
 
-glove = new Case("Glove", "/SourceImages/Cases/Glove/GloveCase1.png");
+        glove = new Case("Glove", "/SourceImages/Cases/Glove/GloveCase1.png");
 
 
 
@@ -120,25 +157,6 @@ glove = new Case("Glove", "/SourceImages/Cases/Glove/GloveCase1.png");
 
         SwingUtilities.invokeLater(() -> {
             Main main = new Main();
-
-            // CaseAnimationPanel animPanel = new CaseAnimationPanel(dreamsAndNightmares);
-            // frame.add(animPanel);
-
-            // Timer startDelay = new Timer(1000, e -> animPanel.startSpin());
-            // startDelay.setRepeats(false);
-            // startDelay.start();
-
-            // Inventory inventory = new Inventory();
-            // CaseOpenManager caseOpenManager = new CaseOpenManager();
-
-            // for (int i = 0; i < 20; i++) {
-            //     CaseItem wonItem = caseOpenManager.openCase(dreamsAndNightmares);
-            //     inventory.addItem(wonItem);
-            //     System.out.println("You won: " + wonItem.getName() + " | Rarity: " + wonItem.getRarity() + " | StatTrak: " + wonItem.isStatTrak());
-            // }
-
-            // InventoryPanel inventoryPanel = new InventoryPanel(inventory);
-            // frame.add(inventoryPanel);
 
         });
 

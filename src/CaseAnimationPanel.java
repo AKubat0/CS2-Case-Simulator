@@ -6,6 +6,7 @@ import java.util.List;
 import javax.swing.*;
 
 public class CaseAnimationPanel extends JPanel {
+    private Navigator nav;
     private List<CaseItem> spinItems;
     private CaseItem winningItem;
     
@@ -21,8 +22,9 @@ public class CaseAnimationPanel extends JPanel {
     private CaseOpenManager caseOpenManager;
     private Case currentCase;
 
-    public CaseAnimationPanel(Case selectedCase) {
+    public CaseAnimationPanel(Case selectedCase, Navigator nav) {
         this.currentCase = selectedCase;
+        this.nav = nav;
         this.caseOpenManager = new CaseOpenManager();
         
         setOpaque(false);
@@ -63,6 +65,7 @@ public class CaseAnimationPanel extends JPanel {
         if (velocity < 0.2) { 
             velocity = 0;
             animTimer.stop();
+            nav.showResult(winningItem);
             System.out.println("You won: " + winningItem.getName() + " (Rarity: " + winningItem.getRarity() + ")");
         }
     }

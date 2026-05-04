@@ -4,10 +4,12 @@ import java.awt.*;
 import javax.swing.*;
 
 public class CaseResultPanel extends JPanel {
+    private Navigator nav;
     private CaseItem wonItem;
 
-    public CaseResultPanel(CaseItem wonItem) {
+    public CaseResultPanel(CaseItem wonItem, Navigator nav) {
         this.wonItem = wonItem;
+        this.nav = nav;
         setOpaque(false);
         this.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -74,6 +76,9 @@ public class CaseResultPanel extends JPanel {
 
         JButton openAnother = createStyledButton("OPEN ANOTHER");
         JButton inventory = createStyledButton("TO INVENTORY");
+
+        openAnother.addActionListener(e -> nav.showCaseSelection());
+        inventory.addActionListener(e -> nav.showInventory());
         
         buttons.add(openAnother);
         buttons.add(inventory);

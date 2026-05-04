@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+        "type": "java",
+        "name": "Main",
+        "request": "launch",
+        "mainClass": "src.Main",
+        "projectName": "CS2-Case-Simulator_e187fcd"
+    },
+    {
+        "type": "java",
+        "name": "CaseOpenManager",
+        "request": "launch",
+        "mainClass": "src.CaseOpenManager",
+        "projectName": "CS2-Case-Simulator_e187fcd"
+    },
+    {
+        "type": "java",
+        "name": "Run CS2 Case Simulator",
+        "request": "launch",
+        "mainClass": "src.Main",
+        "projectName": "CS2-Case-Simulator",
+        "console": "integratedTerminal"
+    }
+]
+}

@@ -46,7 +46,7 @@ public class Main{
     }
 
     private void initData(){
-        dreamsAndNightmares = new Case("Dreams And Nightmares", Main.class.getResource("/SourceImages/Cases/DreamsAndNightmares/DreamsAndNightmaresCase.png"));
+        dreamsAndNightmares = new Case("Dreams And Nightmares", "/SourceImages/Cases/DreamsAndNightmares/DreamsAndNightmaresCase.png");
         dreamsAndNightmares.addItem(new CaseItem("SCAR-20 | Poultrygeist", ItemRarity.MIL_SPEC, "/SourceImages/Cases/DreamsAndNightmares/Scar20,Poultrygeist.png"));
         dreamsAndNightmares.addItem(new CaseItem("MAG-7 | Foresight", ItemRarity.MIL_SPEC, "/SourceImages/Cases/DreamsAndNightmares/Mag7,Foresight.png"));
         dreamsAndNightmares.addItem(new CaseItem("Sawed-Off | Spirit Board", ItemRarity.MIL_SPEC, "/SourceImages/Cases/DreamsAndNightmares/SawedOff,SpiritBoard.png"));
@@ -95,19 +95,19 @@ public class Main{
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Lore", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/BowieKnife,Lore.png"));
         dreamsAndNightmares.addItem(new CaseItem("Bowie Knife | Gamma Doppler", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/DreamsAndNightmares/BowieKnife,GammaDoppler.png"));
 
-        glove = new Case("Glove", Main.class.getResource("/SourceImages/Cases/Glove/GloveCase1.png"));
+glove = new Case("Glove", "/SourceImages/Cases/Glove/GloveCase1.png");
 
 
 
-        kilowatt = new Case("Kilowatt", Main.class.getResource("/SourceImages/Cases/Kilowatt/KilowattCase.png"));
+        kilowatt = new Case("Kilowatt", "/SourceImages/Cases/Kilowatt/KilowattCase.png");
 
 
 
-        operationBreakout = new Case("Operation Breakout", Main.class.getResource("/SourceImages/Cases/OperationBreakout/BreakoutCase.png"));
-
+        operationBreakout = new Case("Operation Breakout", "/SourceImages/Cases/OperationBreakout/BreakoutCase.png");
         
 
-        recoil = new Case("Recoil", Main.class.getResource("/SourceImages/Cases/RecoilCase/RecoilCase.png"));
+        
+        recoil = new Case("Recoil", "/SourceImages/Cases/RecoilCase/RecoilCase.png");
 
         allCases.add(dreamsAndNightmares);
         allCases.add(glove);

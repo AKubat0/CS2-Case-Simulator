@@ -1,4 +1,7 @@
 package src;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import javax.swing.ImageIcon;
 
 public class CaseItem {
@@ -10,23 +13,37 @@ public class CaseItem {
     private int patternIndex;
     private boolean isStatTrak;
     
-
+    
     public CaseItem(String name, ItemRarity rarity, String iconPath) {
-    this.name = name;
-    this.rarity = rarity;
+        this.name = name;
+        this.rarity = rarity;
 
-    java.net.URL imgURL = getClass().getResource(iconPath);
+        java.net.URL imgURL = loadResource(iconPath);
 
-    if (imgURL != null) {
-        this.icon = new ImageIcon(imgURL);
-        if (this.icon.getImageLoadStatus() != java.awt.MediaTracker.COMPLETE) {
-            System.err.println("[ERROR] Corrupted image file: " + name + " @ " + iconPath);
+        if (imgURL != null) {
+            this.icon = new ImageIcon(imgURL);
+            if (this.icon.getImageLoadStatus() != java.awt.MediaTracker.COMPLETE) {
+                System.err.println("[ERROR] Corrupted image file: " + name + " @ " + iconPath);
+            }
+        } else {
+            System.err.println("[MISSING] Resource not found for: " + name + " @ " + iconPath);
         }
-    } 
-    else {
-        System.err.println("[MISSING] Resource not found for: " + name + " @ " + iconPath);
     }
-}
+
+    private URL loadResource(String path) {
+        URL url = getClass().getResource(path);
+        if (url == null) {
+            try {
+                File file = new File(System.getProperty("user.dir") + path);
+                if (file.exists()) {
+                    url = file.toURI().toURL();
+                }
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }
+        return url;
+    }
     
     public String getName() {
         return name;

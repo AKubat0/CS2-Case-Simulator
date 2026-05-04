@@ -9,14 +9,11 @@ import java.util.Map;
 import javax.swing.*;
 
 public class CaseAnimationPanel extends JPanel {
-    // --- Performance Constants (Prevents GC Stutter) ---
     private static final Color BG_COLOR = new Color(11, 13, 18);
     private static final Color NEEDLE_COLOR = new Color(255, 215, 0);
     private static final Color TEXT_COLOR = Color.LIGHT_GRAY;
     private static final Font NAME_FONT = new Font("SansSerif", Font.PLAIN, 11);
     private static final BasicStroke NEEDLE_STROKE = new BasicStroke(3);
-    
-    // Rendering hints for the best balance of speed and quality
     private static final Map<RenderingHints.Key, Object> HINTS = new HashMap<>();
     static {
         HINTS.put(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -27,8 +24,6 @@ public class CaseAnimationPanel extends JPanel {
     private Navigator nav;
     private List<CaseItem> spinItems;
     private CaseItem winningItem;
-    
-    // Image Cache: Stores pre-scaled images so we don't scale during paintComponent
     private final Map<CaseItem, Image> scaledImageCache = new HashMap<>();
 
     private double currentX = 0;      
@@ -48,7 +43,6 @@ public class CaseAnimationPanel extends JPanel {
         this.nav = nav;
         this.caseOpenManager = new CaseOpenManager();
         
-        // Setting opaque to true is faster if you don't need transparency
         setOpaque(true);
         setBackground(new Color(30, 30, 30)); 
         this.setPreferredSize(new Dimension(800, 300));
@@ -70,7 +64,6 @@ public class CaseAnimationPanel extends JPanel {
             CaseItem item = (i == WINNING_INDEX) ? winningItem : caseOpenManager.openCase(c);
             spinItems.add(item);
 
-            // Pre-scale images immediately so the UI doesn't lag later
             if (item.getIcon() != null && !scaledImageCache.containsKey(item)) {
                 Image scaled = createCompatibleScaledImage(item.getIcon().getImage(), ITEM_WIDTH - 40, ITEM_HEIGHT - 60);
                 scaledImageCache.put(item, scaled);
@@ -78,15 +71,10 @@ public class CaseAnimationPanel extends JPanel {
         }
     }
 
-    /**
-     * Creates an image optimized for your specific hardware/monitor.
-     * This is significantly faster than standard scaling.
-     */
+   
     private Image createCompatibleScaledImage(Image src, int targetW, int targetH) {
         GraphicsConfiguration config = GraphicsEnvironment.getLocalGraphicsEnvironment()
                 .getDefaultScreenDevice().getDefaultConfiguration();
-        
-        // Calculate aspect ratio
         int iw = src.getWidth(null);
         int ih = src.getHeight(null);
         double ratio = Math.min((double) targetW / iw, (double) targetH / ih);
@@ -106,7 +94,6 @@ public class CaseAnimationPanel extends JPanel {
     public void startSpin() {
         currentX = 0;
         double targetDistance = (WINNING_INDEX * ITEM_WIDTH);
-        // Physics formula to ensure we land near the target distance
         this.velocity = (targetDistance * (1 - FRICTION)) / FRICTION;
         animTimer.start();
     }
@@ -133,24 +120,18 @@ public class CaseAnimationPanel extends JPanel {
         int centerY = (panelHeight - ITEM_HEIGHT) / 2;
         int centerX = panelWidth / 2;
 
-        // Draw Background
         g2.setColor(BG_COLOR);
         g2.fillRect(0, centerY - 20, panelWidth, ITEM_HEIGHT + 40);
 
-        // Draw Items
         for (int i = 0; i < spinItems.size(); i++) {
-            // Calculate xPos based on current scroll
             int xPos = (int) (i * ITEM_WIDTH - currentX + centerX - (ITEM_WIDTH / 2));
 
-            // Viewport Clipping: Only draw if the item is actually visible on screen
             if (xPos + ITEM_WIDTH > 0 && xPos < panelWidth) {
                 CaseItem item = spinItems.get(i);
                 
-                // 1. Draw Rarity Bar
                 g2.setColor(getRarityColor(item.getRarity()));
                 g2.fillRect(xPos + 5, centerY + ITEM_HEIGHT - 5, ITEM_WIDTH - 10, 5);
 
-                // 2. Draw Cached Scaled Image
                 Image img = scaledImageCache.get(item);
                 if (img != null) {
                     int offX = (ITEM_WIDTH - img.getWidth(null)) / 2;
@@ -158,7 +139,6 @@ public class CaseAnimationPanel extends JPanel {
                     g2.drawImage(img, xPos + offX, centerY + offY, null);
                 }
                 
-                // 3. Draw Name Text
                 g2.setColor(TEXT_COLOR);
                 g2.setFont(NAME_FONT);
                 String name = item.getName();
@@ -167,7 +147,6 @@ public class CaseAnimationPanel extends JPanel {
             }
         }
 
-        // Draw Center Needle
         g2.setColor(NEEDLE_COLOR); 
         g2.setStroke(NEEDLE_STROKE);
         g2.drawLine(centerX, centerY - 30, centerX, centerY + ITEM_HEIGHT + 30);

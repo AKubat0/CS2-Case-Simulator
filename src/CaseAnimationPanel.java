@@ -82,7 +82,7 @@ public class CaseAnimationPanel extends JPanel {
         int centerY = (getHeight() - ITEM_HEIGHT) / 2;
         int centerX = getWidth() / 2;
 
-        g2.setColor(new Color(15, 17, 20));
+        g2.setColor(new Color(11, 13, 18));
         g2.fillRect(0, centerY - 20, getWidth(), ITEM_HEIGHT + 40);
 
         for (int i = 0; i < spinItems.size(); i++) {

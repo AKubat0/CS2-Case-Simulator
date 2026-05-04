@@ -2,14 +2,18 @@ package src;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.geom.RoundRectangle2D;
 import javax.swing.*;
 
 public class CaseCard extends JPanel {
+    private static final int CORNER_RADIUS = 24;
+
     public CaseCard(Case _case, ActionListener openAction) {
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setBorder(BorderFactory.createEtchedBorder());
-        setBackground(new Color(20, 23, 27));
+        setOpaque(false);
+        setBorder(BorderFactory.createEmptyBorder(12, 12, 12, 12));
+        setBackground(new Color(18, 19, 22));
 
         ImageIcon originalIcon = _case.getCaseIcon();
 
@@ -50,7 +54,27 @@ public class CaseCard extends JPanel {
         add(Box.createVerticalStrut(10));
     }
 
-    public ImageIcon getScaledIcon(ImageIcon srcIcon, int maxWidth, int maxHeight) {
+    @Override
+    protected void paintComponent(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g.create();
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        int width = getWidth();
+        int height = getHeight();
+        RoundRectangle2D rounded = new RoundRectangle2D.Float(0, 0, width, height, CORNER_RADIUS, CORNER_RADIUS);
+
+        g2.setColor(getBackground());
+        g2.fill(rounded);
+
+        g2.setColor(new Color(255, 255, 255, 40));
+        g2.setStroke(new BasicStroke(1.5f));
+        g2.draw(rounded);
+
+        g2.dispose();
+        super.paintComponent(g);
+    }
+
+    private ImageIcon getScaledIcon(ImageIcon srcIcon, int maxWidth, int maxHeight) {
         return ImageUtils.getScaledIcon(srcIcon, maxWidth, maxHeight, false);
     }
 }

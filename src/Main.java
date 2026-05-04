@@ -33,8 +33,8 @@ public class Main{
 
         initData();
 
-        //OpenCasePanel openCasePanel = new OpenCasePanel(allCases);
-        //frame.add(openCasePanel);
+        OpenCasePanel openCasePanel = new OpenCasePanel(allCases);
+        frame.add(openCasePanel);
         // CaseOpenManager caseOpenManager = new CaseOpenManager();
         // CaseItem wonItem = caseOpenManager.openCase(dreamsAndNightmares);
         // System.out.println("is it stattrak? " + wonItem.isStatTrak());
@@ -58,7 +58,7 @@ public class Main{
         dreamsAndNightmares.addItem(new CaseItem("PP-Bizon | Space Cat", ItemRarity.RESTRICTED, "/SourceImages/Cases/DreamsAndNightmares/PPBizon,SpaceCat.png"));
         dreamsAndNightmares.addItem(new CaseItem("G3SG1 | Dream Glade", ItemRarity.RESTRICTED, "/SourceImages/Cases/DreamsAndNightmares/G3SG1,DreamGlade.png"));
         dreamsAndNightmares.addItem(new CaseItem("USP-S | Ticket to Hell", ItemRarity.RESTRICTED, "/SourceImages/Cases/DreamsAndNightmares/USPS,TicketToHell.png"));
-        dreamsAndNightmares.addItem(new CaseItem("M4A1-S | Night Terror", ItemRarity.RESTRICTED, "/SourceImages/Cases/DreamsAndNightmares/M4A1S,NightTerror.png"));
+        dreamsAndNightmares.addItem(new CaseItem("M4A1-S | Night Terror", ItemRarity.RESTRICTED, "/SourceImages/Cases/DreamsAndNightmares/M4A1,NightTerror.png"));
         dreamsAndNightmares.addItem(new CaseItem("FAMAS | Rapid Eye Movement", ItemRarity.CLASSIFIED, "/SourceImages/Cases/DreamsAndNightmares/Famas,RapidEyeMovement.png"));
         dreamsAndNightmares.addItem(new CaseItem("Dual Berettas | Melondrama", ItemRarity.CLASSIFIED, "/SourceImages/Cases/DreamsAndNightmares/DualBerettas,Melondrama.png"));
         dreamsAndNightmares.addItem(new CaseItem("MP7 | Abyssal Apparition", ItemRarity.CLASSIFIED, "/SourceImages/Cases/DreamsAndNightmares/MP7,AbyssalApparition.png"));
@@ -121,12 +121,25 @@ public class Main{
         SwingUtilities.invokeLater(() -> {
             Main main = new Main();
 
-            CaseAnimationPanel animPanel = new CaseAnimationPanel(dreamsAndNightmares);
-            frame.add(animPanel);
+            // CaseAnimationPanel animPanel = new CaseAnimationPanel(dreamsAndNightmares);
+            // frame.add(animPanel);
 
-            Timer startDelay = new Timer(1000, e -> animPanel.startSpin());
-            startDelay.setRepeats(false);
-            startDelay.start();
+            // Timer startDelay = new Timer(1000, e -> animPanel.startSpin());
+            // startDelay.setRepeats(false);
+            // startDelay.start();
+
+            // Inventory inventory = new Inventory();
+            // CaseOpenManager caseOpenManager = new CaseOpenManager();
+
+            // for (int i = 0; i < 20; i++) {
+            //     CaseItem wonItem = caseOpenManager.openCase(dreamsAndNightmares);
+            //     inventory.addItem(wonItem);
+            //     System.out.println("You won: " + wonItem.getName() + " | Rarity: " + wonItem.getRarity() + " | StatTrak: " + wonItem.isStatTrak());
+            // }
+
+            // InventoryPanel inventoryPanel = new InventoryPanel(inventory);
+            // frame.add(inventoryPanel);
+
         });
 
 

@@ -6,17 +6,31 @@ import javax.swing.*;
 public class InventoryPanel extends JPanel {
     private Inventory inventory;
     private JPanel gridPanel;
+    private JButton backButton;
 
     public InventoryPanel(Inventory inventory) {
         this.inventory = inventory;
         this.setLayout(new BorderLayout());
         this.setBackground(new Color(10, 9, 13));
 
-        gridPanel = new JPanel(new GridLayout(0, 4, 15, 15));
-        gridPanel.setBackground(new Color(10, 9, 13));
-        gridPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        JPanel headerPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        headerPanel.setBackground(new Color(10, 9, 13));
+        headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 20));
 
-        JScrollPane scrollPane = new JScrollPane(gridPanel);
+        backButton = createStyledButton("OPEN MORE CASES");
+        headerPanel.add(backButton);
+        add(headerPanel, BorderLayout.NORTH);
+
+        // Fixed-size Grid logic
+        gridPanel = new JPanel(new GridLayout(0, 8, 15, 15));
+        gridPanel.setBackground(new Color(10, 9, 13));
+
+        JPanel centeringWrapper = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        centeringWrapper.setBackground(new Color(10, 9, 13));
+        centeringWrapper.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        centeringWrapper.add(gridPanel);
+
+        JScrollPane scrollPane = new JScrollPane(centeringWrapper);
         scrollPane.setBorder(null);
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
         scrollPane.getViewport().setBackground(new Color(10, 9, 13));
@@ -38,17 +52,18 @@ public class InventoryPanel extends JPanel {
         JPanel card = new JPanel();
         card.setLayout(new BorderLayout());
         card.setBackground(new Color(30, 30, 35));
-        card.setPreferredSize(new Dimension(180, 220));
         
-        // Rarity border color
+        Dimension fixedSize = new Dimension(180, 220);
+        card.setPreferredSize(fixedSize);
+        card.setMinimumSize(fixedSize);
+        card.setMaximumSize(fixedSize);
+        
         Color rarityColor = getRarityColor(item.getRarity());
         card.setBorder(BorderFactory.createMatteBorder(0, 0, 4, 0, rarityColor));
 
-        // 1. Icon Container
         JLabel iconLabel = new JLabel();
         if (item.getIcon() != null) {
             Image img = item.getIcon().getImage();
-            // Scale keeping aspect ratio
             double ratio = Math.min(140.0 / img.getWidth(null), 100.0 / img.getHeight(null));
             Image scaled = img.getScaledInstance((int)(img.getWidth(null)*ratio), (int)(img.getHeight(null)*ratio), Image.SCALE_SMOOTH);
             iconLabel.setIcon(new ImageIcon(scaled));
@@ -56,12 +71,10 @@ public class InventoryPanel extends JPanel {
         iconLabel.setHorizontalAlignment(SwingConstants.CENTER);
         card.add(iconLabel, BorderLayout.CENTER);
 
-        // 2. Info Panel (Bottom)
         JPanel infoPanel = new JPanel(new GridLayout(2, 1));
         infoPanel.setOpaque(false);
         infoPanel.setBorder(BorderFactory.createEmptyBorder(5, 10, 10, 10));
 
-        // Name (truncate if long)
         String displayName = item.getName();
         if (item.isStatTrak()) {
             displayName = "<html><font color='#cf6a32'>StatTrak™</font> " + displayName + "</html>";
@@ -77,10 +90,19 @@ public class InventoryPanel extends JPanel {
 
         infoPanel.add(nameLabel);
         infoPanel.add(wearLabel);
-        
         card.add(infoPanel, BorderLayout.SOUTH);
 
         return card;
+    }
+
+    private JButton createStyledButton(String text) {
+        JButton btn = new JButton(text);
+        btn.setFont(new Font("SansSerif", Font.BOLD, 12));
+        btn.setForeground(Color.WHITE);
+        btn.setBackground(new Color(45, 45, 50));
+        btn.setFocusPainted(false);
+        btn.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        return btn;
     }
 
     private String getWearName(float wear) {

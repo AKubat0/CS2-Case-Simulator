@@ -46,7 +46,11 @@ public class CaseOpenManager{
 
         CaseItem randomItem = itemsOfRarity.get(random.nextInt(itemsOfRarity.size()));
 
-        randomItem.setWear(random.nextFloat(0.00000000000000000000000000000000000001175f, 1.0f));
+
+        int maxInt = 2147483647;
+        int randomInt = random.nextInt(0, maxInt);
+
+        randomItem.setWear((float)randomInt/maxInt);
         randomItem.setPatternIndex(random.nextInt(1, 1000));
         int statTrakChance = random.nextInt(100);
         if (statTrakChance < 10) {

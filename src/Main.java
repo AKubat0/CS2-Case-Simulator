@@ -153,7 +153,7 @@ public class Main implements Navigator {
         glove.addItem(new CaseItem("Sport Gloves | Superconductor", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SportGloves,Superconductor.png"));
         glove.addItem(new CaseItem("Specialist Gloves | Forest DDPAT", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SpecialistGloves,ForestDDPAT.png"));
         glove.addItem(new CaseItem("Specialist Gloves | Crimson Kimono", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SpecialistGloves,CrimsonKimono.png"));
-        glove.addItem(new CaseItem("Specialist Gloves | Foundation", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SpecialistGloves,Foundation.png"));
+        glove.addItem(new CaseItem("Specialist Gloves | Foundation", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SpecialistGloves,Foundatiton.png"));
         glove.addItem(new CaseItem("Specialist Gloves | Emerald Web", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/SpecialistGloves,EmeraldWeb.png"));
         glove.addItem(new CaseItem("Moto Gloves | Eclipse", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/MotoGloves,Eclipse.png"));
         glove.addItem(new CaseItem("Moto Gloves | Boom!", ItemRarity.RARE_SPECIAL_ITEM, "/SourceImages/Cases/Glove/MotoGloves,Boom.png"));

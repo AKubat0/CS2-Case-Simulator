@@ -32,7 +32,7 @@ public class CaseAnimationPanel extends JPanel {
         
         prepareStrip(selectedCase);
 
-        animTimer = new Timer(16, e -> {
+        animTimer = new Timer(10, e -> {
             updatePhysics();
             repaint();
         });

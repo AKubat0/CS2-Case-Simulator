@@ -293,7 +293,7 @@ public class Main implements Navigator {
             Main main = new Main();
 
             AdminPanel.AdminSettings.enabled = true;
-            AdminPanel.AdminSettings.setDesiredRarity(ItemRarity.RARE_SPECIAL_ITEM);
+            AdminPanel.AdminSettings.desiredRarity = ItemRarity.RARE_SPECIAL_ITEM;
             AdminPanel.AdminSettings.desiredRarityEnabled = true;
         });
 

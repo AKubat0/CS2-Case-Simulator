@@ -38,10 +38,14 @@ public class CaseAnimationPanel extends JPanel {
     private CaseOpenManager caseOpenManager;
     private Case currentCase;
 
+    JButton skipButton = new JButton();
+
     public CaseAnimationPanel(Case selectedCase, Navigator nav) {
         this.currentCase = selectedCase;
         this.nav = nav;
         this.caseOpenManager = new CaseOpenManager();
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
         
         setOpaque(true);
         setBackground(new Color(10, 9, 13)); 
@@ -53,12 +57,32 @@ public class CaseAnimationPanel extends JPanel {
             updatePhysics();
             repaint();
         });
+
+
+        skipButton.setText("Skip");
+        skipButton.setFont(new Font("SansSerif", Font.BOLD, 12));
+        skipButton.setForeground(Color.WHITE);
+        skipButton.setBackground(new Color(45, 45, 50));
+        skipButton.setFocusPainted(false);
+        skipButton.setBorder(BorderFactory.createEmptyBorder(10, 25, 10, 25));
+        skipButton.addActionListener(e -> {
+            animTimer.stop();
+            nav.showResult(winningItem);
+        });
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        buttonPanel.setOpaque(false);
+        buttonPanel.add(skipButton);
+        
+        add(Box.createVerticalStrut(700));
+        add(buttonPanel);
     }
 
     private void prepareStrip(Case c) {
         spinItems = new ArrayList<>();
         scaledImageCache.clear();
-        this.winningItem = caseOpenManager.openCase(c);
+        this.winningItem = (AdminPanel.AdminSettings.enabled) ? caseOpenManager.customOpenCase(c) : caseOpenManager.openCase(c);
 
         for (int i = 0; i < 40; i++) {
             CaseItem item = (i == WINNING_INDEX) ? winningItem : caseOpenManager.openCase(c);

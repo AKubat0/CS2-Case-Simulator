@@ -292,6 +292,9 @@ public class Main implements Navigator {
         SwingUtilities.invokeLater(() -> {
             Main main = new Main();
 
+            AdminPanel.AdminSettings.enabled = true;
+            AdminPanel.AdminSettings.setDesiredRarity(ItemRarity.RARE_SPECIAL_ITEM);
+            AdminPanel.AdminSettings.desiredRarityEnabled = true;
         });
 
 

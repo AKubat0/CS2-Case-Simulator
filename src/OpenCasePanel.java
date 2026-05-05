@@ -7,10 +7,13 @@ public class OpenCasePanel extends JPanel {
 
     private Navigator nav;
     JButton inventoryButton;
+    AdminPanel adminPanel;
 
     public OpenCasePanel(List<Case> availableCases, Navigator nav) {
         this.nav = nav;
         setLayout(new BorderLayout());
+        adminPanel = new AdminPanel(nav);
+        
 
         JPanel headerPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         headerPanel.setBackground(new Color(10, 9, 13));
@@ -20,6 +23,8 @@ public class OpenCasePanel extends JPanel {
         headerPanel.add(inventoryButton);
         add(headerPanel, BorderLayout.NORTH);
         inventoryButton.addActionListener(e -> nav.showInventory());
+
+        add(adminPanel, BorderLayout.SOUTH);
 
         JPanel centeringWrapper = new JPanel(new GridBagLayout());
         centeringWrapper.setBackground(new Color(10, 9, 13));
@@ -50,4 +55,5 @@ public class OpenCasePanel extends JPanel {
         btn.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         return btn;
     }
+
 }

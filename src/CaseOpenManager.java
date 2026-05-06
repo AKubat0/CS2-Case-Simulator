@@ -18,7 +18,7 @@ public class CaseOpenManager{
     public CaseItem customOpenCase(Case caseToOpen){
         this.currentCase = caseToOpen;
         CaseItem item = (AdminPanel.AdminSettings.desiredRarityEnabled) ? getRandomItemByRarity(AdminPanel.AdminSettings.getDesiredRarity()) : getRandomItemFromCase();
-        item.setWear((AdminPanel.AdminSettings.desiredWearEnabled) ? AdminPanel.AdminSettings.desiredWear : getRandomWear());
+        item.setWear((AdminPanel.AdminSettings.desiredWearEnabled) ? AdminPanel.AdminSettings.getDesiredWear() : getRandomWear());
         item.setPatternIndex((AdminPanel.AdminSettings.desiredPatternEnabled) ? AdminPanel.AdminSettings.getDesiredPattern() : getRandomPatternIndex());
         item.setStatTrak((AdminPanel.AdminSettings.forceStatTrakEnabled) ? AdminPanel.AdminSettings.getForceStatTrak() : getRandomStatTrak());
         return item;

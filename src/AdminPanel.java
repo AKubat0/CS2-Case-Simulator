@@ -7,7 +7,7 @@ import javax.swing.border.EmptyBorder;
 public class AdminPanel extends JPanel {
     private Navigator nav;
     private JButton adminButton;
-    private final String ADMIN_PASSWORD = "admin123";
+    private final String ADMIN_PASSWORD = "123";
 
     public AdminPanel(Navigator nav) {
         this.nav = nav;
@@ -21,8 +21,7 @@ public class AdminPanel extends JPanel {
     }
 
     private void showPasswordDialog() {
-        Window parent = SwingUtilities.getWindowAncestor(this);
-        JDialog dialog = new JDialog((JFrame) parent, "Admin Access", true);
+        JDialog dialog = new JDialog((JFrame) SwingUtilities.getWindowAncestor(this), "Admin Access", true);
         dialog.getContentPane().setBackground(new Color(25, 25, 30));
 
         JPanel content = new JPanel();
@@ -47,7 +46,6 @@ public class AdminPanel extends JPanel {
         loginBtn.addActionListener(e -> {
             if (new String(passField.getPassword()).equals(ADMIN_PASSWORD)) {
                 dialog.dispose();
-                // Use invokeLater to ensure the password dialog is fully gone
                 SwingUtilities.invokeLater(() -> showSettingsDialog());
             } else {
                 label.setText("Invalid Password!");
@@ -56,84 +54,77 @@ public class AdminPanel extends JPanel {
         });
 
         content.add(label);
-        content.add(Box.createVerticalStrut(15));
+        content.add(Box.createVerticalStrut(15)); 
         content.add(passField);
         content.add(Box.createVerticalStrut(15));
         content.add(loginBtn);
 
         dialog.add(content);
         dialog.pack();
-        dialog.setLocationRelativeTo(parent);
+        dialog.setLocationRelativeTo(SwingUtilities.getWindowAncestor(this));
         dialog.setVisible(true);
     }
 
     private void showSettingsDialog() {
-        Window parent = SwingUtilities.getWindowAncestor(this);
-        JDialog dialog = new JDialog((JFrame) parent, "Admin Settings", true);
+        JDialog dialog = new JDialog((JFrame) SwingUtilities.getWindowAncestor(this), "Admin Settings", true);
         dialog.getContentPane().setBackground(new Color(10, 9, 13));
 
-        JPanel mainPanel = new JPanel(new GridBagLayout());
+        // Using a clean 5 Row, 3 Column GridLayout
+        JPanel mainPanel = new JPanel(new GridLayout(5, 3, 10, 15));
         mainPanel.setOpaque(false);
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.insets = new Insets(8, 8, 8, 8);
 
-        // Row 0: Master Toggle
-        gbc.gridy = 0; gbc.gridx = 0;
-        mainPanel.add(createLabel("MASTER ADMIN ENABLE:"), gbc);
+        // --- ROW 1: Master Enable ---
+        mainPanel.add(createLabel("Master Admin Mode:"));
+        mainPanel.add(new JLabel()); // Empty spacer for the middle column
         JCheckBox masterToggle = createStyledToggle(AdminSettings.enabled);
         masterToggle.addActionListener(e -> AdminSettings.enabled = masterToggle.isSelected());
-        gbc.gridx = 2;
-        mainPanel.add(masterToggle, gbc);
+        mainPanel.add(masterToggle);
 
-        // Row 1: Rarity
-        gbc.gridy = 1; gbc.gridx = 0;
-        mainPanel.add(createLabel("OVERRIDE RARITY:"), gbc);
+        // --- ROW 2: Rarity Setting ---
+        mainPanel.add(createLabel("Override Rarity:"));
         JCheckBox rarityToggle = createStyledToggle(AdminSettings.desiredRarityEnabled);
         rarityToggle.addActionListener(e -> AdminSettings.desiredRarityEnabled = rarityToggle.isSelected());
-        gbc.gridx = 1; mainPanel.add(rarityToggle, gbc);
+        mainPanel.add(rarityToggle);
 
         JComboBox<ItemRarity> rarityBox = new JComboBox<>(ItemRarity.values());
         rarityBox.setSelectedItem(AdminSettings.getDesiredRarity());
         rarityBox.addActionListener(e -> AdminSettings.setDesiredRarity((ItemRarity) rarityBox.getSelectedItem()));
-        gbc.gridx = 2; mainPanel.add(rarityBox, gbc);
+        mainPanel.add(rarityBox);
 
-        // Row 2: Wear
-        gbc.gridy = 2; gbc.gridx = 0;
-        mainPanel.add(createLabel("OVERRIDE WEAR:"), gbc);
+        // --- ROW 3: Wear Setting ---
+        mainPanel.add(createLabel("Set Wear (0-1):"));
         JCheckBox wearToggle = createStyledToggle(AdminSettings.desiredWearEnabled);
         wearToggle.addActionListener(e -> AdminSettings.desiredWearEnabled = wearToggle.isSelected());
-        gbc.gridx = 1; mainPanel.add(wearToggle, gbc);
+        mainPanel.add(wearToggle);
 
         JSlider wearSlider = new JSlider(0, 100, (int)(AdminSettings.getDesiredWear() * 100));
         wearSlider.setOpaque(false);
         wearSlider.addChangeListener(e -> AdminSettings.setDesiredWear(wearSlider.getValue() / 100f));
-        gbc.gridx = 2; mainPanel.add(wearSlider, gbc);
+        mainPanel.add(wearSlider);
 
-        // Row 3: Pattern
-        gbc.gridy = 3; gbc.gridx = 0;
-        mainPanel.add(createLabel("OVERRIDE PATTERN:"), gbc);
-        JCheckBox patternToggle = createStyledToggle(AdminSettings.desiredPatternEnabled);
-        patternToggle.addActionListener(e -> AdminSettings.desiredPatternEnabled = patternToggle.isSelected());
-        gbc.gridx = 1; mainPanel.add(patternToggle, gbc);
-
-        JSpinner patternSpinner = new JSpinner(new SpinnerNumberModel(AdminSettings.getDesiredPattern(), 1, 1000, 1));
-        patternSpinner.addChangeListener(e -> AdminSettings.setDesiredPattern((int) patternSpinner.getValue()));
-        gbc.gridx = 2; mainPanel.add(patternSpinner, gbc);
-
-        // Row 4: StatTrak
-        gbc.gridy = 4; gbc.gridx = 0;
-        mainPanel.add(createLabel("OVERRIDE STATTRAK:"), gbc);
+        // --- ROW 4: StatTrak Setting ---
+        mainPanel.add(createLabel("Force StatTrak:"));
         JCheckBox stToggle = createStyledToggle(AdminSettings.forceStatTrakEnabled);
         stToggle.addActionListener(e -> AdminSettings.forceStatTrakEnabled = stToggle.isSelected());
-        gbc.gridx = 1; mainPanel.add(stToggle, gbc);
+        mainPanel.add(stToggle);
 
         JCheckBox stValue = createStyledToggle(AdminSettings.getForceStatTrak());
-        stValue.setText("Force On");
+        stValue.setText("Yes");
         stValue.setForeground(Color.WHITE);
         stValue.addActionListener(e -> AdminSettings.setForceStatTrak(stValue.isSelected()));
-        gbc.gridx = 2; mainPanel.add(stValue, gbc);
+        mainPanel.add(stValue);
+
+        // --- ROW 5: Pattern Setting ---
+        mainPanel.add(createLabel("Desired Pattern:"));
+        JCheckBox patternToggle = createStyledToggle(AdminSettings.desiredPatternEnabled);
+        patternToggle.addActionListener(e -> AdminSettings.desiredPatternEnabled = patternToggle.isSelected());
+        mainPanel.add(patternToggle);
+
+        JSlider patternSlider = new JSlider(1, 1000, AdminSettings.getDesiredPattern());
+        patternSlider.setOpaque(false);
+        patternSlider.addChangeListener(e -> AdminSettings.setDesiredPattern(patternSlider.getValue()));
+        mainPanel.add(patternSlider);
 
         dialog.add(mainPanel, BorderLayout.CENTER);
         
@@ -142,15 +133,15 @@ public class AdminPanel extends JPanel {
         dialog.add(closeBtn, BorderLayout.SOUTH);
 
         dialog.pack();
-        dialog.setMinimumSize(new Dimension(500, 450));
-        dialog.setLocationRelativeTo(parent);
+        dialog.setMinimumSize(new Dimension(500, 400));
+        dialog.setLocationRelativeTo(SwingUtilities.getWindowAncestor(this));
         dialog.setVisible(true);
     }
 
     private JLabel createLabel(String text) {
         JLabel l = new JLabel(text);
         l.setForeground(Color.WHITE);
-        l.setFont(new Font("SansSerif", Font.BOLD, 11));
+        l.setFont(new Font("SansSerif", Font.BOLD, 12));
         return l;
     }
 
@@ -171,49 +162,36 @@ public class AdminPanel extends JPanel {
         return btn;
     }
 
-    public static class AdminSettings{
-
+    public static class AdminSettings {
         public static boolean enabled = false;
 
-        static ItemRarity desiredRarity;
+   
+        private static ItemRarity desiredRarity = ItemRarity.MIL_SPEC;
         public static boolean desiredRarityEnabled = false;
 
-        public static void setDesiredRarity(ItemRarity rarity) {
-            desiredRarity = rarity;
-        }   
-        public static ItemRarity getDesiredRarity() {
-            return desiredRarity;
-        }
-
-        static float desiredWear;
+        private static float desiredWear = 0.05f;
         public static boolean desiredWearEnabled = false;
 
-        public static void setDesiredWear(float wear) {
-            desiredWear = Math.clamp(wear, 0, 1);
-        }
-        public static float getDesiredWear() {
-            return desiredWear;
-        }
-
-        static int desiredPattern;
+        private static int desiredPattern = 1; 
         public static boolean desiredPatternEnabled = false;
 
-        public static void setDesiredPattern(int pattern) {
-            desiredPattern = Math.clamp(pattern, 1, 1000);
-        }
-        public static int getDesiredPattern() {
-            return desiredPattern;
-        }
-
-        static boolean forceStatTrak;
+        private static boolean forceStatTrak = false;
         public static boolean forceStatTrakEnabled = false;
 
-        public static void setForceStatTrak(boolean statTrak) {
-            forceStatTrak = statTrak;
-        }
-        public static boolean getForceStatTrak() {
-            return forceStatTrak;
-        }
+        public static void setDesiredRarity(ItemRarity rarity) { desiredRarity = rarity; }   
+        public static ItemRarity getDesiredRarity() { return desiredRarity; }
 
+        public static void setDesiredWear(float wear) { 
+            desiredWear = Math.max(0, Math.min(1, wear)); 
+        }
+        public static float getDesiredWear() { return desiredWear; }
+
+        public static void setDesiredPattern(int pattern) { 
+            desiredPattern = Math.max(1, Math.min(1000, pattern));
+        }
+        public static int getDesiredPattern() { return desiredPattern; }
+
+        public static void setForceStatTrak(boolean statTrak) { forceStatTrak = statTrak; }
+        public static boolean getForceStatTrak() { return forceStatTrak; }
     }
 }   

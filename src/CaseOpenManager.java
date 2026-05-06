@@ -57,7 +57,7 @@ public class CaseOpenManager{
             }
         }
         CaseItem randomItem = itemsOfRarity.get(random.nextInt(itemsOfRarity.size()));
-        return randomItem;
+        return randomItem.clone();
     }
 
     private float getRandomWear() {

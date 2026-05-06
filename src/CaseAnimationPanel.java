@@ -82,7 +82,8 @@ public class CaseAnimationPanel extends JPanel {
     private void prepareStrip(Case c) {
         spinItems = new ArrayList<>();
         scaledImageCache.clear();
-        this.winningItem = (AdminPanel.AdminSettings.enabled) ? caseOpenManager.customOpenCase(c) : caseOpenManager.openCase(c);
+        boolean useCustomOpen = AdminPanel.AdminSettings.enabled;
+        this.winningItem = useCustomOpen ? caseOpenManager.customOpenCase(c) : caseOpenManager.openCase(c);
 
         for (int i = 0; i < 40; i++) {
             CaseItem item = (i == WINNING_INDEX) ? winningItem : caseOpenManager.openCase(c);

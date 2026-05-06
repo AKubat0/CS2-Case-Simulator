@@ -3,6 +3,13 @@
   "configurations": [
     {
         "type": "java",
+        "name": "CaseOpenManager",
+        "request": "launch",
+        "mainClass": "src.CaseOpenManager",
+        "projectName": "CS2-Case-Simulator_9b6ca23"
+    },
+    {
+        "type": "java",
         "name": "Main",
         "request": "launch",
         "mainClass": "src.Main",

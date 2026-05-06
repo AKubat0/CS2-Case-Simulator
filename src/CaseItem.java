@@ -30,6 +30,12 @@ public class CaseItem {
         }
     }
 
+    private CaseItem(String name, ItemRarity rarity, ImageIcon icon) {
+        this.name = name;
+        this.rarity = rarity;
+        this.icon = icon;
+    }
+
     private URL loadResource(String path) {
         URL url = getClass().getResource(path);
         if (url == null) {
@@ -79,6 +85,14 @@ public class CaseItem {
 
     public void setStatTrak(boolean isStatTrak) {
         this.isStatTrak = isStatTrak;
+    }
+    
+    public CaseItem clone() {
+        CaseItem cloned = new CaseItem(this.name, this.rarity, this.icon);
+        cloned.wear = this.wear;
+        cloned.patternIndex = this.patternIndex;
+        cloned.isStatTrak = this.isStatTrak;
+        return cloned;
     }
     
 }

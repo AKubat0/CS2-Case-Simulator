@@ -11,6 +11,7 @@ public class Inventory {
     public Inventory() {
         this.items = new ArrayList<>();
 
+        System.out.println("Inventory file exists: " + inventoryFile.exists() + " @ " + inventoryFile.getAbsolutePath());
         if (!inventoryFile.exists()){
             try {
                 inventoryFile.createNewFile();
@@ -18,6 +19,7 @@ public class Inventory {
                 e.printStackTrace();
             }
         } else {
+            System.out.println("Loading inventory from file...");
             loadInventory();
         }
     }
@@ -37,16 +39,20 @@ public class Inventory {
 
             synchronized (fileLock) {
                 try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(inventoryFile, false)))) {
+                    System.out.println("[INVENTORY] Saving " + items.size() + " items to CSV");
                     for (CaseItem item : items) {
-                        pw.println(String.join("|", 
+                        String iconPath = item.getIconPath() != null ? item.getIconPath() : "null";
+                        pw.println(String.join("||", 
                             item.getName(), 
                             item.getRarity().toString(), 
-                            item.getIcon().toString(), //Fix later
+                            iconPath,
                             String.valueOf(item.getWear()), 
                             String.valueOf(item.getPatternIndex()), 
                             String.valueOf(item.isStatTrak())
                         ));
+                        System.out.println("[INVENTORY] Saved: " + item.getName() + " with icon path: " + iconPath);
                     }
+                    System.out.println("[INVENTORY] Save complete!");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -58,8 +64,9 @@ public class Inventory {
         items.clear();
         try (BufferedReader br = new BufferedReader(new FileReader(inventoryFile))) {
             String line;
+            int loadedCount = 0;
             while ((line = br.readLine()) != null) {
-                String[] parts = line.split("\\|");
+                String[] parts = line.split("\\|\\|");
                 if (parts.length == 6) {
                     try {
                         CaseItem item = new CaseItem(parts[0], ItemRarity.valueOf(parts[1]), parts[2]);
@@ -67,11 +74,17 @@ public class Inventory {
                         item.setPatternIndex(Integer.parseInt(parts[4]));
                         item.setStatTrak(Boolean.parseBoolean(parts[5]));
                         items.add(item);
+                        loadedCount++;
+                        System.out.println("[INVENTORY] Loaded item: " + parts[0]);
                     } catch (Exception e) {
                         System.err.println("Skipping corrupted line: " + line);
+                        e.printStackTrace();
                     }
+                } else {
+                    System.out.println("[INVENTORY] Skipped line - wrong number of parts: " + parts.length + " (expected 6)");
                 }
             }
+            System.out.println("[INVENTORY] Successfully loaded " + loadedCount + " items from CSV");
         } catch (IOException e) {
             e.printStackTrace();
         }

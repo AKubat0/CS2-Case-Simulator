@@ -9,6 +9,7 @@ public class CaseItem {
     private String name;
     private ItemRarity rarity;
     private ImageIcon icon;
+    private String iconPath;
     private float wear;
     private int patternIndex;
     private boolean isStatTrak;
@@ -17,6 +18,7 @@ public class CaseItem {
     public CaseItem(String name, ItemRarity rarity, String iconPath) {
         this.name = name;
         this.rarity = rarity;
+        this.iconPath = iconPath;
 
         java.net.URL imgURL = loadResource(iconPath);
 
@@ -30,10 +32,11 @@ public class CaseItem {
         }
     }
 
-    private CaseItem(String name, ItemRarity rarity, ImageIcon icon) {
+    private CaseItem(String name, ItemRarity rarity, ImageIcon icon, String iconPath) {
         this.name = name;
         this.rarity = rarity;
         this.icon = icon;
+        this.iconPath = iconPath;
     }
 
     private URL loadResource(String path) {
@@ -63,6 +66,10 @@ public class CaseItem {
         return icon;
     }
 
+    public String getIconPath() {
+        return iconPath;
+    }
+
     public float getWear() {
         return wear;
     }
@@ -88,7 +95,7 @@ public class CaseItem {
     }
     
     public CaseItem clone() {
-        CaseItem cloned = new CaseItem(this.name, this.rarity, this.icon);
+        CaseItem cloned = new CaseItem(this.name, this.rarity, this.icon, this.iconPath);
         cloned.wear = this.wear;
         cloned.patternIndex = this.patternIndex;
         cloned.isStatTrak = this.isStatTrak;

@@ -22,6 +22,7 @@ public class CaseAnimationPanel extends JPanel {
     }
 
     private Navigator nav;
+    private Inventory inventory;
     private List<CaseItem> spinItems;
     private CaseItem winningItem;
     private final Map<CaseItem, Image> scaledImageCache = new HashMap<>();
@@ -40,9 +41,10 @@ public class CaseAnimationPanel extends JPanel {
 
     JButton skipButton = new JButton();
 
-    public CaseAnimationPanel(Case selectedCase, Navigator nav) {
+    public CaseAnimationPanel(Case selectedCase, Navigator nav, Inventory inventory) {
         this.currentCase = selectedCase;
         this.nav = nav;
+        this.inventory = inventory;
         this.caseOpenManager = new CaseOpenManager();
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
@@ -67,6 +69,8 @@ public class CaseAnimationPanel extends JPanel {
         skipButton.setBorder(BorderFactory.createEmptyBorder(10, 25, 10, 25));
         skipButton.addActionListener(e -> {
             animTimer.stop();
+            inventory.addItem(winningItem);
+            inventory.saveInventory();
             nav.showResult(winningItem);
         });
 
@@ -130,6 +134,10 @@ public class CaseAnimationPanel extends JPanel {
         if (velocity < 0.5) { 
             velocity = 0;
             animTimer.stop();
+
+            inventory.addItem(winningItem);
+            inventory.saveInventory();
+
             nav.showResult(winningItem);
         }
     }

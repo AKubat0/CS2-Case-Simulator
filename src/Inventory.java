@@ -30,19 +30,51 @@ public class Inventory {
         return items;
     }
 
-    public void saveInventory(){
+    private final Object fileLock = new Object();
 
-        try(FileWriter fw = new FileWriter(inventoryFile, true)){
-            for (CaseItem item : items) {
-                fw.write(item.getName() + "," + item.getRarity() + "," + item.getIcon() + "," + item.getWear() + "," + item.getPatternIndex() + "," + item.isStatTrak() + System.lineSeparator());
+    public void saveInventory() {
+        new Thread(() -> {
+
+            synchronized (fileLock) {
+                try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(inventoryFile, false)))) {
+                    for (CaseItem item : items) {
+                        pw.println(String.join("|", 
+                            item.getName(), 
+                            item.getRarity().toString(), 
+                            item.getIcon().toString(), //Fix later
+                            String.valueOf(item.getWear()), 
+                            String.valueOf(item.getPatternIndex()), 
+                            String.valueOf(item.isStatTrak())
+                        ));
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    public void loadInventory() {
+        items.clear();
+        try (BufferedReader br = new BufferedReader(new FileReader(inventoryFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split("\\|");
+                if (parts.length == 6) {
+                    try {
+                        CaseItem item = new CaseItem(parts[0], ItemRarity.valueOf(parts[1]), parts[2]);
+                        item.setWear(Float.parseFloat(parts[3]));
+                        item.setPatternIndex(Integer.parseInt(parts[4]));
+                        item.setStatTrak(Boolean.parseBoolean(parts[5]));
+                        items.add(item);
+                    } catch (Exception e) {
+                        System.err.println("Skipping corrupted line: " + line);
+                    }
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void loadInventory(){
-
     }
 
 

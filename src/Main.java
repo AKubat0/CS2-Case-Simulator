@@ -62,7 +62,7 @@ public class Main implements Navigator {
 
     @Override
     public void startCaseOpening(Case selectedCase) {
-        CaseAnimationPanel animPanel = new CaseAnimationPanel(selectedCase, this);
+        CaseAnimationPanel animPanel = new CaseAnimationPanel(selectedCase, this, userInventory);
         mainContainer.add(animPanel, "ANIMATION");
         cardLayout.show(mainContainer, "ANIMATION");
 
@@ -71,7 +71,6 @@ public class Main implements Navigator {
 
     @Override
     public void showResult(CaseItem wonItem) {
-        userInventory.addItem(wonItem);
         
         CaseResultPanel resultPanel = new CaseResultPanel(wonItem, this);
         mainContainer.add(resultPanel, "RESULT");

@@ -16,14 +16,14 @@ public class CaseResultPanel extends JPanel {
         gbc.insets = new Insets(10, 10, 10, 10);
         gbc.gridx = 0;
 
-        // 1. Title Label (Subtitle style)
+        // Title
         JLabel subtitle = new JLabel("YOU UNBOXED", SwingConstants.CENTER);
         subtitle.setFont(new Font("SansSerif", Font.BOLD, 14));
         subtitle.setForeground(new Color(200, 200, 200));
         gbc.gridy = 0;
         add(subtitle, gbc);
 
-        // 2. Item Name Label (Main Header)
+        // Item name
         JLabel nameLabel = new JLabel();
         nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
         nameLabel.setFont(new Font("SansSerif", Font.BOLD, 32));
@@ -40,7 +40,7 @@ public class CaseResultPanel extends JPanel {
         gbc.gridy = 1;
         add(nameLabel, gbc);
 
-        // 3. Icon (Proportional Scaling)
+        // Image
         ImageIcon icon = wonItem.getIcon();
         if (icon != null) {
             Image img = icon.getImage();
@@ -51,7 +51,7 @@ public class CaseResultPanel extends JPanel {
             add(iconLabel, gbc);
         }
 
-        // 4. Details Panel (Rarity and Wear)
+        // Skin details
         JPanel details = new JPanel(new FlowLayout(FlowLayout.CENTER, 40, 0));
         details.setOpaque(false);
         
@@ -69,7 +69,7 @@ public class CaseResultPanel extends JPanel {
         gbc.insets = new Insets(10, 10, 40, 10);
         add(details, gbc);
 
-        // 5. Buttons
+        // Buttons
         JPanel buttons = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 0));
         buttons.setOpaque(false);
 
@@ -101,11 +101,9 @@ public class CaseResultPanel extends JPanel {
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        // Draw Dark Background
         g2.setColor(new Color(10, 9, 13));
         g2.fillRect(0, 0, getWidth(), getHeight());
 
-        // Draw Radial Glow based on rarity
         Color rarityColor = getRarityColor(wonItem.getRarity());
         float[] dist = {0.0f, 0.7f};
         Color[] colors = {new Color(rarityColor.getRed(), rarityColor.getGreen(), rarityColor.getBlue(), 50), 

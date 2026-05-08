@@ -69,19 +69,18 @@ public class AdminPanel extends JPanel {
         JDialog dialog = new JDialog((JFrame) SwingUtilities.getWindowAncestor(this), "Admin Settings", true);
         dialog.getContentPane().setBackground(new Color(10, 9, 13));
 
-        // Using a clean 5 Row, 3 Column GridLayout
         JPanel mainPanel = new JPanel(new GridLayout(5, 3, 10, 15));
         mainPanel.setOpaque(false);
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // --- ROW 1: Master Enable ---
+        // main enable
         mainPanel.add(createLabel("Master Admin Mode:"));
         mainPanel.add(new JLabel()); // Empty spacer for the middle column
         JCheckBox masterToggle = createStyledToggle(AdminSettings.enabled);
         masterToggle.addActionListener(e -> AdminSettings.enabled = masterToggle.isSelected());
         mainPanel.add(masterToggle);
 
-        // --- ROW 2: Rarity Setting ---
+        // rarity setting
         mainPanel.add(createLabel("Override Rarity:"));
         JCheckBox rarityToggle = createStyledToggle(AdminSettings.desiredRarityEnabled);
         rarityToggle.addActionListener(e -> AdminSettings.desiredRarityEnabled = rarityToggle.isSelected());
@@ -92,7 +91,7 @@ public class AdminPanel extends JPanel {
         rarityBox.addActionListener(e -> AdminSettings.setDesiredRarity((ItemRarity) rarityBox.getSelectedItem()));
         mainPanel.add(rarityBox);
 
-        // --- ROW 3: Wear Setting ---
+        // wear setting
         mainPanel.add(createLabel("Set Wear (0-1):"));
         JCheckBox wearToggle = createStyledToggle(AdminSettings.desiredWearEnabled);
         wearToggle.addActionListener(e -> AdminSettings.desiredWearEnabled = wearToggle.isSelected());
@@ -103,7 +102,7 @@ public class AdminPanel extends JPanel {
         wearSlider.addChangeListener(e -> AdminSettings.setDesiredWear(wearSlider.getValue() / 100f));
         mainPanel.add(wearSlider);
 
-        // --- ROW 4: StatTrak Setting ---
+        // StatTrak Setting
         mainPanel.add(createLabel("Force StatTrak:"));
         JCheckBox stToggle = createStyledToggle(AdminSettings.forceStatTrakEnabled);
         stToggle.addActionListener(e -> AdminSettings.forceStatTrakEnabled = stToggle.isSelected());
@@ -115,7 +114,7 @@ public class AdminPanel extends JPanel {
         stValue.addActionListener(e -> AdminSettings.setForceStatTrak(stValue.isSelected()));
         mainPanel.add(stValue);
 
-        // --- ROW 5: Pattern Setting ---
+        // Pattern Index Setting
         mainPanel.add(createLabel("Desired Pattern:"));
         JCheckBox patternToggle = createStyledToggle(AdminSettings.desiredPatternEnabled);
         patternToggle.addActionListener(e -> AdminSettings.desiredPatternEnabled = patternToggle.isSelected());
